@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<script>window.KHOA='sb_publishable_YovJicH4FY50OIUr7IxE5Q_jPB7J4AN';</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sổ nhắc việc</title>
+<style>
+:root{--bg:#f5f3ee;--card:#fff;--tx:#1f2430;--mut:#7a8090;--bd:#e6e2d8;--ac:#b4472f;--ac2:#2f5d8a;--ok:#2e8b57;--wn:#c47f12;--rd:#c0392b;--sh:0 1px 3px rgba(0,0,0,.06);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171c;--card:#1f232b;--tx:#eceef2;--mut:#98a0b0;--bd:#2d323d;--ac:#e0705a;--ac2:#6fa3d6;--sh:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15171c;--card:#1f232b;--tx:#eceef2;--mut:#98a0b0;--bd:#2d323d;--ac:#e0705a;--ac2:#6fa3d6;--sh:none;color-scheme:dark}
+*{box-sizing:border-box}html{height:100%}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100%}
+.app{max-width:760px;margin:0 auto;padding:16px 14px 40px}
+.hero{background:linear-gradient(135deg,var(--ac),#7a2e4a);color:#fff;border-radius:18px;padding:18px 20px;box-shadow:var(--sh)}
+.hero small{opacity:.85;display:block}.hero h1{margin:2px 0 4px;font-size:24px}.hero .l{font-size:16px;opacity:.95}
+.chip{float:right;font-size:11px;background:rgba(255,255,255,.2);padding:2px 9px;border-radius:99px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.st{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 12px;text-align:center}.st b{display:block;font-size:22px}.st span{font-size:12px;color:var(--mut)}
+.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:4px;margin:6px 0 12px}
+.tabs button{flex:1;border:0;background:none;color:var(--mut);padding:9px;border-radius:9px;font:inherit;font-weight:600;cursor:pointer}
+.tabs button.on{background:var(--ac);color:#fff}
+.card{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--ac2);border-radius:12px;padding:10px 14px;margin:0 0 10px;box-shadow:var(--sh)}
+.card.w{border-left-color:var(--wn)}.card.r{border-left-color:var(--rd)}.card.a{border-left-color:var(--ac)}.card.g{border-left-color:var(--ok)}
+.card h3{margin:0 0 4px;font-size:14px}.card ul{margin:0;padding-left:18px}.card li{margin:2px 0}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+input,select,button.b{font:inherit;padding:9px 10px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx)}
+input[type=text]{flex:1;min-width:140px}input[type=number]{width:72px}
+button.b{background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600;cursor:pointer}
+.it{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:9px 12px;margin-bottom:6px}
+.it .t{flex:1;min-width:0}.it .t div{font-size:12px;color:var(--mut)}.it.dn .t b{text-decoration:line-through;color:var(--mut)}
+.it input[type=checkbox]{width:20px;height:20px;accent-color:var(--ok)}
+.it a,.it .x{color:var(--ac2);text-decoration:none;font-size:13px;background:none;border:0;cursor:pointer;padding:4px}.it .x{color:var(--rd);font-size:18px}
+h2{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin:16px 2px 6px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cal .h{text-align:center;font-size:11px;color:var(--mut);padding:2px}
+.d{aspect-ratio:1;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:3px 5px;font-size:14px;cursor:pointer;position:relative;color:var(--tx);text-align:left}
+.d i{display:block;font-style:normal;font-size:10px;color:var(--mut)}.d.o{opacity:.35}.d.t{outline:2px solid var(--ac)}.d.s{background:var(--ac);color:#fff}.d.s i{color:#fff}
+.d.m i{color:var(--ac);font-weight:700}.d.s.m i{color:#fff}.d u{position:absolute;right:5px;bottom:5px;width:6px;height:6px;border-radius:50%;background:var(--wn)}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.nav button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:6px 14px;font-size:16px;cursor:pointer}
+.mu{color:var(--mut);font-size:13px;margin:6px 2px}.mu a{color:var(--ac2)}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script></head><body><div class="app">
+<div class="hero"><span class="chip" id="st">…</span><small id="hd"></small><h1 id="hd2"></h1><div class="l" id="hl"></div></div>
+<div class="stats" id="stats"></div>
+<div class="tabs"><button data-t="0" class="on">Hôm nay</button><button data-t="1">Dương lịch</button><button data-t="2">Âm lịch</button></div>
+<div id="p0"></div><div id="p1" hidden></div><div id="p2" hidden></div>
+<h2>Thông báo Telegram</h2><div class="mu" id="tgs"></div><div class="mu"><a href="#" onclick="logout();return false">Đăng xuất</a></div>
+</div>
+<div id="lg" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9;align-items:center;justify-content:center;padding:20px"><div class="card" style="width:100%;max-width:340px"><h3>Đăng nhập Sổ nhắc việc</h3><input type="text" id="le" placeholder="Email" style="width:100%;margin:6px 0"><input type="password" id="lp" placeholder="Mật khẩu" style="width:100%;margin:6px 0"><button class="b" onclick="login()" style="width:100%">Đăng nhập</button><div id="lerr" class="mu" style="color:var(--rd)"></div></div></div>
+<script>
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0'),P=k=>k.split('-').map(Number);
+const K=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const add=(k,n)=>{const[a,b,c]=P(k);return K(new Date(a,b-1,c+n))};
+const dowK=k=>{const[a,b,c]=P(k);return new Date(a,b-1,c).getDay()};
+const dim=k=>{const[a,b]=P(k);return new Date(a,b,0).getDate()};
+const fm=(k,y)=>{const[a,b,c]=P(k);return pad(c)+'/'+pad(b)+(y?'/'+a:'')};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const DOW=['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'];
+/* ---- đổi dương -> âm (Hồ Ngọc Đức, múi giờ +7) ---- */
+function jd(dd,mm,yy){const a=Math.floor((14-mm)/12),y=yy+4800-a,m=mm+12*a-3;return dd+Math.floor((153*m+2)/5)+365*y+Math.floor(y/4)-Math.floor(y/100)+Math.floor(y/400)-32045}
+function nm(k){const T=k/1236.85,T2=T*T,T3=T2*T,r=Math.PI/180,S=Math.sin;let J=2415020.75933+29.53058868*k+0.0001178*T2-0.000000155*T3;J+=0.00033*S((166.56+132.87*T-0.009173*T2)*r);
+const M=359.2242+29.10535608*k-0.0000333*T2-0.00000347*T3,Q=306.0253+385.81691806*k+0.0107306*T2+0.00001236*T3,F=21.2964+390.67050646*k-0.0016528*T2-0.00000239*T3;
+let C=(0.1734-0.000393*T)*S(M*r)+0.0021*S(2*r*M);C-=0.4068*S(Q*r)-0.0161*S(r*2*Q);C-=0.0004*S(r*3*Q);C+=0.0104*S(r*2*F)-0.0051*S(r*(M+Q));
+C-=0.0074*S(r*(M-Q))-0.0004*S(r*(2*F+M));C-=0.0004*S(r*(2*F-M))+0.0006*S(r*(2*F+Q));C+=0.0010*S(r*(2*F-Q))+0.0005*S(r*(2*Q+M));
+return J+C-(T<-11?0.001+0.000839*T+0.0002261*T2-0.00000845*T3-0.000000081*T*T3:-0.000278+0.000265*T+0.000262*T2)}
+function sl(j){const T=(j-2451545)/36525,T2=T*T,r=Math.PI/180,M=357.5291+35999.0503*T-0.0001559*T2-0.00000048*T*T2,L0=280.46645+36000.76983*T+0.0003032*T2;
+let D=(1.9146-0.004817*T-0.000014*T2)*Math.sin(r*M);D+=(0.019993-0.000101*T)*Math.sin(r*2*M)+0.00029*Math.sin(r*3*M);let L=(L0+D)*r;L-=Math.PI*2*Math.floor(L/(Math.PI*2));return L}
+const gs=d=>Math.floor(sl(d-0.5-7/24)/Math.PI*6),gn=k=>Math.floor(nm(k)+0.5+7/24);
+function m11(y){const k=Math.floor((jd(31,12,y)-2415021)/29.530588853);let n=gn(k);if(gs(n)>=9)n=gn(k-1);return n}
+function leap(a){const k=Math.floor((a-2415021.076998695)/29.530588853+0.5);let l,i=1,c=gs(gn(k+i));do{l=c;i++;c=gs(gn(k+i))}while(c!==l&&i<14);return i-1}
+const memo={};
+function lun(key){if(memo[key])return memo[key];const[y0,mm,dd]=P(key),dn=jd(dd,mm,y0),k=Math.floor((dn-2415021.076998695)/29.530588853);let ms=gn(k+1);if(ms>dn)ms=gn(k);
+let a=m11(y0),b=a,ly;if(a>=ms){ly=y0;a=m11(y0-1)}else{ly=y0+1;b=m11(y0+1)}const d=dn-ms+1,df=Math.floor((ms-a)/29);let lp=false,m=df+11;
+if(b-a>365){const o=leap(a);if(df>=o){m=df+10;if(df===o)lp=true}}if(m>12)m-=12;if(m>=11&&df<4)ly--;return memo[key]={d,m,y:ly,leap:lp}}
+const CAN=['Giáp','Ất','Bính','Đinh','Mậu','Kỷ','Canh','Tân','Nhâm','Quý'],CHI=['Tý','Sửu','Dần','Mão','Thìn','Tỵ','Ngọ','Mùi','Thân','Dậu','Tuất','Hợi'];
+const cc=y=>CAN[(y+6)%10]+' '+CHI[(y+8)%12];
+/* ---- dữ liệu ---- */
+let S={tasks:[],lunar:[
+{id:1,t:'Cúng mùng 1',d:1,m:0,b:1,p:1},{id:2,t:'Cúng rằm',d:15,m:0,b:1,p:1},{id:3,t:'Cúng ông Công ông Táo',d:23,m:12,b:2,p:1},
+{id:4,t:'Cúng giao thừa / tất niên',d:30,m:12,b:2,p:1},{id:5,t:'Tết Nguyên Đán',d:1,m:1,b:2,p:1},{id:6,t:'Rằm tháng Giêng',d:15,m:1,b:1,p:1},
+{id:7,t:'Tết Đoan Ngọ',d:5,m:5,b:1,p:1},{id:8,t:'Rằm tháng 7',d:15,m:7,b:1,p:1},{id:9,t:'Tết Trung thu',d:15,m:8,b:1,p:1}]};
+const SUPA_URL='https://zixymydhgnngnllophhj.supabase.co',SUPA_KEY=window.KHOA;
+const SB=supabase.createClient(SUPA_URL,SUPA_KEY);let tm,tab=0,uid=null,view=new Date(),sel=K(new Date());const TODAY=()=>K(new Date());
+try{const x=localStorage.getItem('nv');if(x)S=JSON.parse(x)}catch(e){}
+const stt=t=>{$('#st').textContent=t};
+function save(){try{localStorage.setItem('nv',JSON.stringify(S))}catch(e){}clearTimeout(tm);
+tm=setTimeout(async()=>{if(!uid)return stt('Lưu trên thiết bị');const{error}=await SB.from('app_state').upsert({user_id:uid,data:S,updated_at:new Date().toISOString()});stt(error?'Lỗi lưu: '+error.message:'Đã lưu trên tài khoản')},400)}
+/* ---- khớp việc âm lịch ---- */
+function match(e,k){const l=lun(k),n=lun(add(k,1));if(e.m&&(e.m!==l.m||l.leap))return false;return e.d===l.d||(e.d===30&&l.d===29&&n.d===1)}
+const lunOn=(k,mx)=>S.lunar.filter(e=>!e.p&&(mx==null||e.b>=mx)&&match(e,k));
+function nextOcc(e){const t=TODAY();for(let i=0;i<400;i++){const k=add(t,i);if(match(e,k))return k}return t}
+/* ---- liên kết thêm vào Google Calendar (điện thoại) ---- */
+function gcal(title,k,rrule){const c=s=>s.replace(/-/g,''),u='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+c(k)+'/'+c(add(k,1))+(rrule?'&recur='+encodeURIComponent('RRULE:'+rrule):'');
+return '<a href="'+u+'" target="_blank" rel="noopener">+ Lịch</a>'}
+const RR={'Ngày':'FREQ=DAILY','Tuần':'FREQ=WEEKLY','Tháng':'FREQ=MONTHLY'};
+/* ---- dựng giao diện ---- */
+function card(c,t,items){return items.length?'<div class="card '+c+'"><h3>'+t+'</h3><ul>'+items.map(i=>'<li>'+i+'</li>').join('')+'</ul></div>':''}
+const tl=t=>esc(t.t)+' <span style="color:var(--mut)">(hạn '+fm(t.due,1)+')</span>';
+function renderToday(){const t=TODAY(),open=S.tasks.filter(x=>!x.done&&x.due),late=open.filter(x=>x.due<t),dd=P(t)[2],last=dim(t),h=[];
+h.push(card('r','Việc đến hạn hôm nay',open.filter(x=>x.due===t).map(tl)));
+if(dowK(t)===1){h.push(card('w','Đầu tuần – việc tồn đọng chưa hoàn thành',late.map(tl)));h.push(card('','Đầu tuần – việc đến hạn trong tuần',open.filter(x=>x.due>t&&x.due<=add(t,6)).map(tl)))}
+else h.push(card('r','Việc quá hạn chưa hoàn thành',late.map(tl)));
+if(dd>=last-2){const eom=t.slice(0,8)+pad(last);h.push(card('w','Cuối tháng – chưa có xác nhận hoàn thành (còn '+(last-dd)+' ngày)',open.filter(x=>x.due<=eom).map(tl)))}
+const l=lun(t);if(l.d===1){const it=[];for(let i=0;i<30;i++){const k=add(t,i);if(i&&lun(k).d===1)break;lunOn(k).forEach(e=>it.push(fm(k)+' ('+lun(k).d+'/'+lun(k).m+' âm): '+esc(e.t)))}
+h.push(card('a','Mùng 1 – việc cần chú ý trong tháng '+l.m+(l.leap?' nhuận':'')+' âm lịch',it))}
+h.push(card('a','Hôm nay (âm lịch '+l.d+'/'+l.m+')',lunOn(t).map(e=>esc(e.t))));
+for(let i=1;i<=2;i++)h.push(card('g','Âm lịch – còn '+i+' ngày nữa ('+fm(add(t,i))+')',lunOn(add(t,i),i).map(e=>esc(e.t))));
+const wait=S.tasks.filter(x=>!x.done&&!x.due).map(x=>esc(x.t));h.push(card('w','CHỜ BỔ SUNG THÔNG TIN – chưa có hạn chót (hệ thống không tự đặt hạn)',wait));
+const pend=S.lunar.filter(e=>e.p).map(e=>esc(e.t)+' ('+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm)');h.push(card('w','CẦN XÁC NHẬN – ngày cúng/giỗ do hệ thống đề xuất, chưa được nhắc (vào tab Âm lịch để xác nhận)',pend));
+const cf=[];for(let i=0;i<=3;i++){const k=add(t,i),ev=lunOn(k),tk=open.filter(x=>x.due===k);if(ev.length&&tk.length)cf.push(fm(k)+': '+ev.map(e=>esc(e.t)).join(', ')+' trùng việc '+tk.map(x=>esc(x.t)).join(', ')+'<br>Phương án 1: làm việc đó sớm hơn 1 ngày. Phương án 2: dời việc sang sau ngày cúng.')}h.push(card('r','XUNG ĐỘT LỊCH cúng/giỗ và công việc',cf));
+const body=h.join('')||'<div class="card g"><h3>Hôm nay không có việc nào cần xử lý.</h3></div>';
+$('#p0').innerHTML=body+'<h2>Gắn nhắc nhở cố định vào lịch điện thoại</h2><div class="mu">'+
+gcal('Rà soát việc tồn đọng đầu tuần',add(t,(8-dowK(t))%7||7),'FREQ=WEEKLY;BYDAY=MO')+' · Thứ hai hằng tuần<br>'+
+gcal('Xác nhận hoàn thành việc trong tháng (còn 2 ngày cuối tháng)',t.slice(0,8)+pad(Math.max(1,last-2)),'FREQ=MONTHLY;BYMONTHDAY=-3')+' · Trước 2 ngày cuối tháng</div>'}
+function renderStats(){const t=TODAY(),o=S.tasks.filter(x=>!x.done&&x.due),n=lun(t);let c=0;for(let i=0;i<7;i++)c+=lunOn(add(t,i)).length;
+$('#stats').innerHTML=[[o.filter(x=>x.due<t).length,'Quá hạn'],[o.filter(x=>x.due>=t&&x.due<=add(t,6)).length,'Việc 7 ngày tới'],[c,'Lễ âm lịch 7 ngày tới']].map(a=>'<div class="st"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('')}
+function renderTasks(){const t=TODAY(),all=S.tasks.filter(x=>!x.done),wait=all.filter(x=>!x.due),o=all.filter(x=>x.due).sort((a,b)=>a.due<b.due?-1:1),dn=S.tasks.filter(x=>x.done).slice(-8).reverse();
+const own=x=>x.o?' · PT: '+esc(x.o):'';
+const it=x=>'<div class="it'+(x.done?' dn':'')+'"><input type="checkbox" '+(x.done?'checked':'')+' onchange="tog('+x.id+')"><div class="t"><b>'+esc(x.t)+'</b><div>'+(!x.due?'<span style="color:var(--wn)">Chờ bổ sung thông tin · </span><input type="date" onchange="setDue('+x.id+',this.value)">':(x.due<t&&!x.done?'<span style="color:var(--rd)">Quá hạn · </span>':'')+fm(x.due,1))+(x.rep&&x.rep!=='Không'?' · lặp theo '+x.rep.toLowerCase():'')+own(x)+'</div></div>'+(x.done||!x.due?'':gcal(x.t,x.due,RR[x.rep]))+'<button class="x" onclick="delT('+x.id+')">×</button></div>';
+$('#p1').innerHTML='<div class="row"><input type="text" id="nt" placeholder="Việc cần làm…"><input type="date" id="nd"><input type="text" id="no" placeholder="Người phụ trách"><select id="nr"><option>Không</option><option>Ngày</option><option>Tuần</option><option>Tháng</option></select><button class="b" onclick="addT()">Thêm</button></div><div class="mu">Chưa có hạn chót thì để trống: việc vào mục “Chờ bổ sung thông tin”, hệ thống không tự đặt hạn.</div>'+
+(wait.length?'<h2>Chờ bổ sung thông tin ('+wait.length+')</h2>'+wait.map(it).join(''):'')+'<h2>Đang chờ ('+o.length+')</h2>'+(o.map(it).join('')||'<div class="mu">Không còn việc nào.</div>')+(dn.length?'<h2>Đã xong gần đây</h2>'+dn.map(it).join(''):'')}
+function renderLunar(){const y=view.getFullYear(),m=view.getMonth(),f=new Date(y,m,1),off=(f.getDay()+6)%7,t=TODAY();let g=['T2','T3','T4','T5','T6','T7','CN'].map(x=>'<div class="h">'+x+'</div>').join('');
+for(let i=0;i<42;i++){const k=K(new Date(y,m,1-off+i)),l=lun(k),o=P(k)[1]-1!==m,ev=lunOn(k).length||S.tasks.some(x=>!x.done&&x.due===k);
+g+='<button class="d'+(o?' o':'')+(k===t?' t':'')+(k===sel?' s':'')+(l.d===1?' m':'')+'" onclick="pick(\''+k+'\')">'+P(k)[2]+'<i>'+(l.d===1?l.d+'/'+l.m:l.d)+'</i>'+(ev?'<u></u>':'')+'</button>'}
+const sl2=lun(sel),ev=lunOn(sel),tk=S.tasks.filter(x=>!x.done&&x.due===sel);
+const eit=e=>'<div class="it"><div class="t"><b>'+esc(e.t)+'</b>'+(e.p?' <span style="color:var(--wn);font-size:12px">CẦN XÁC NHẬN</span>':'')+'<div>'+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm · nhắc trước '+e.b+' ngày'+(e.p?' · chưa được nhắc':' · kế tiếp '+fm(nextOcc(e),1))+'</div></div>'+(e.p?'<button class="b" onclick="okL('+e.id+')">Xác nhận</button>':gcal(e.t,nextOcc(e)))+'<button class="x" onclick="delL('+e.id+')">×</button></div>';
+$('#p2').innerHTML='<div class="nav"><button onclick="mv(-1)">‹</button><b>Tháng '+(m+1)+'/'+y+'</b><button onclick="mv(1)">›</button></div><div class="cal">'+g+'</div>'+
+'<div class="card a" style="margin-top:10px"><h3>'+fm(sel,1)+' = '+sl2.d+'/'+sl2.m+(sl2.leap?' nhuận':'')+' âm lịch, năm '+cc(sl2.y)+'</h3>'+(ev.length||tk.length?'<ul>'+ev.map(e=>'<li>'+esc(e.t)+'</li>').join('')+tk.map(x=>'<li>'+esc(x.t)+' (việc)</li>').join('')+'</ul>':'<span class="mu">Không có việc.</span>')+'</div>'+
+'<h2>Thêm việc âm lịch (lặp lại tự động mỗi năm)</h2><div class="row"><input type="text" id="lt" placeholder="Tên việc, ví dụ: Giỗ…"><input type="number" id="ld" min="1" max="30" placeholder="Ngày"><input type="number" id="lm" min="0" max="12" placeholder="Tháng"><select id="lb"><option value="0">Nhắc đúng ngày</option><option value="1" selected>Trước 1 ngày</option><option value="2">Trước 2 ngày</option></select><button class="b" onclick="addL()">Thêm</button></div><div class="mu">Tháng để 0 hoặc trống = lặp hằng tháng.</div>'+
+'<h2>Danh sách ('+S.lunar.length+')</h2>'+S.lunar.slice().sort((a,b)=>(a.m||0)-(b.m||0)||a.d-b.d).map(eit).join('')}
+function render(){const t=TODAY(),l=lun(t);$('#hd').textContent=DOW[dowK(t)];$('#hd2').textContent=fm(t,1);$('#hl').textContent='Âm lịch '+l.d+'/'+l.m+(l.leap?' nhuận':'')+' · năm '+cc(l.y);renderStats();renderToday();renderTasks();renderLunar()}
+/* ---- thao tác ---- */
+const nid=()=>Date.now()+Math.floor(Math.random()*1000);
+function addT(){const t=$('#nt').value.trim(),d=$('#nd').value;if(!t)return;S.tasks.push({id:nid(),t,due:d||'',o:$('#no').value.trim(),rep:$('#nr').value,done:false});save();render();tab=1}
+function setDue(id,d){if(!d)return;const x=S.tasks.find(a=>a.id===id);if(!confirm('Đặt hạn chót '+fm(d,1)+' cho việc "'+x.t+'". Xác nhận?'))return;x.due=d;save();render()}
+function tog(id){const x=S.tasks.find(a=>a.id===id);x.done=!x.done;if(x.done&&x.due&&x.rep&&x.rep!=='Không'){let n=x.due;do{const[a,b,c]=P(n);n=x.rep==='Ngày'?add(n,1):x.rep==='Tuần'?add(n,7):K(new Date(a,b,Math.min(c,new Date(a,b+1,0).getDate())))}while(n<TODAY());S.tasks.push({id:nid(),t:x.t,due:n,o:x.o||'',rep:x.rep,done:false})}save();render()}
+function delT(id){const x=S.tasks.find(a=>a.id===id);if(!confirm('Hành động: xóa việc "'+x.t+'". Việc sẽ mất khỏi danh sách và lịch nhắc, không hoàn tác. Xác nhận xóa?'))return;S.tasks=S.tasks.filter(a=>a.id!==id);save();render()}
+function addL(){const t=$('#lt').value.trim(),d=+$('#ld').value,m=+$('#lm').value||0;if(!t||d<1||d>30||m<0||m>12)return;if(!confirm('Thêm việc âm lịch "'+t+'" vào ngày '+d+(m?'/'+m:' hằng tháng')+' âm lịch, nhắc trước '+$('#lb').value+' ngày.'+(d===30?' Lưu ý: tháng thiếu không có ngày 30, hệ thống sẽ nhắc vào ngày 29.':'')+' Xác nhận lưu?'))return;S.lunar.push({id:nid(),t,d,m,b:+$('#lb').value});save();render()}
+function okL(id){const x=S.lunar.find(a=>a.id===id);if(!confirm('Xác nhận "'+x.t+'" ('+x.d+(x.m?'/'+x.m:' hằng tháng')+' âm lịch) là ngày chính thức, bắt đầu được nhắc trước '+x.b+' ngày?'))return;delete x.p;save();render()}
+function delL(id){const x=S.lunar.find(a=>a.id===id);if(!confirm('Hành động: xóa ngày "'+x.t+'" khỏi lịch âm. Lịch nhắc của ngày này sẽ mất. Xác nhận xóa?'))return;S.lunar=S.lunar.filter(a=>a.id!==id);save();render()}
+function pick(k){sel=k;renderLunar()}
+function mv(n){view=new Date(view.getFullYear(),view.getMonth()+n,1);renderLunar()}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=+b.dataset.t;document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));[0,1,2].forEach(i=>$('#p'+i).hidden=i!==tab)});
+render();stt('Lưu trên thiết bị');
+(async()=>{const{data:{session}}=await SB.auth.getSession();if(!session){$('#lg').style.display='flex';return}await boot(session.user)})();
+async function boot(u){uid=u.id;$('#lg').style.display='none';const{data}=await SB.from('app_state').select('data,telegram_chat_id').eq('user_id',uid).maybeSingle();
+if(data&&data.data&&data.data.lunar){S=data.data;render()}else save();tgState(data&&data.telegram_chat_id);stt('Đã lưu trên tài khoản')}
+async function login(){const{data,error}=await SB.auth.signInWithPassword({email:$('#le').value.trim(),password:$('#lp').value});if(error){$('#lerr').textContent='Sai email hoặc mật khẩu';return}await boot(data.user)}
+async function logout(){await SB.auth.signOut();location.reload()}
+function tgState(c){$('#tgs').innerHTML=(c?'Đã ghép nối Telegram. ':'Chưa ghép nối. ')+'<button class="b" onclick="pair()">'+(c?'Ghép lại':'Tạo mã ghép nối')+'</button>'}
+async function pair(){const code=Math.random().toString(36).slice(2,10).padEnd(8,'x');const{error}=await SB.from('app_state').upsert({user_id:uid,pair_code:code});$('#tgs').innerHTML=error?esc(error.message):'Mở bot trong Telegram và gửi: <b>/start '+code+'</b>'}
+</script></body></html>
