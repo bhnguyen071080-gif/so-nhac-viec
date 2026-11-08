@@ -2,48 +2,151 @@
 <html lang="vi"><head><meta charset="utf-8">
 <script>window.KHOA='sb_publishable_YovJicH4FY50OIUr7IxE5Q_jPB7J4AN';</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17224a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sổ nhắc việc">
 <title>Sổ nhắc việc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5f3ee;--card:#fff;--tx:#1f2430;--mut:#7a8090;--bd:#e6e2d8;--ac:#b4472f;--ac2:#2f5d8a;--ok:#2e8b57;--wn:#c47f12;--rd:#c0392b;--sh:0 1px 3px rgba(0,0,0,.06);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171c;--card:#1f232b;--tx:#eceef2;--mut:#98a0b0;--bd:#2d323d;--ac:#e0705a;--ac2:#6fa3d6;--sh:none;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#15171c;--card:#1f232b;--tx:#eceef2;--mut:#98a0b0;--bd:#2d323d;--ac:#e0705a;--ac2:#6fa3d6;--sh:none;color-scheme:dark}
-*{box-sizing:border-box}html{height:100%}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100%}
-.app{max-width:760px;margin:0 auto;padding:16px 14px 40px}
-.hero{background:linear-gradient(135deg,var(--ac),#7a2e4a);color:#fff;border-radius:18px;padding:18px 20px;box-shadow:var(--sh)}
-.hero small{opacity:.85;display:block}.hero h1{margin:2px 0 4px;font-size:24px}.hero .l{font-size:16px;opacity:.95}
-.chip{float:right;font-size:11px;background:rgba(255,255,255,.2);padding:2px 9px;border-radius:99px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
-.st{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:10px 12px;text-align:center}.st b{display:block;font-size:22px}.st span{font-size:12px;color:var(--mut)}
-.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:4px;margin:6px 0 12px}
-.tabs button{flex:1;border:0;background:none;color:var(--mut);padding:9px;border-radius:9px;font:inherit;font-weight:600;cursor:pointer}
-.tabs button.on{background:var(--ac);color:#fff}
-.card{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--ac2);border-radius:12px;padding:10px 14px;margin:0 0 10px;box-shadow:var(--sh)}
-.card.w{border-left-color:var(--wn)}.card.r{border-left-color:var(--rd)}.card.a{border-left-color:var(--ac)}.card.g{border-left-color:var(--ok)}
-.card h3{margin:0 0 4px;font-size:14px}.card ul{margin:0;padding-left:18px}.card li{margin:2px 0}
-.row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-input,select,button.b{font:inherit;padding:9px 10px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx)}
-input[type=text]{flex:1;min-width:140px}input[type=number]{width:72px}
-button.b{background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600;cursor:pointer}
-.it{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:9px 12px;margin-bottom:6px}
-.it .t{flex:1;min-width:0}.it .t div{font-size:12px;color:var(--mut)}.it.dn .t b{text-decoration:line-through;color:var(--mut)}
-.it input[type=checkbox]{width:20px;height:20px;accent-color:var(--ok)}
-.it a,.it .x{color:var(--ac2);text-decoration:none;font-size:13px;background:none;border:0;cursor:pointer;padding:4px}.it .x{color:var(--rd);font-size:18px}
-h2{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin:16px 2px 6px}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cal .h{text-align:center;font-size:11px;color:var(--mut);padding:2px}
-.d{aspect-ratio:1;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:3px 5px;font-size:14px;cursor:pointer;position:relative;color:var(--tx);text-align:left}
-.d i{display:block;font-style:normal;font-size:10px;color:var(--mut)}.d.o{opacity:.35}.d.t{outline:2px solid var(--ac)}.d.s{background:var(--ac);color:#fff}.d.s i{color:#fff}
-.d.m i{color:var(--ac);font-weight:700}.d.s.m i{color:#fff}.d u{position:absolute;right:5px;bottom:5px;width:6px;height:6px;border-radius:50%;background:var(--wn)}
-.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.nav button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:6px 14px;font-size:16px;cursor:pointer}
-.mu{color:var(--mut);font-size:13px;margin:6px 2px}.mu a{color:var(--ac2)}
+:root{
+  --bg:#eef1f6;--card:#fff;--tx:#14213d;--mut:#5a6a84;--bd:#d9e0ec;--soft:#f5f7fb;
+  --night:#17224a;--night2:#26356b;--gold:#e3b04b;
+  --sig:#e8590c;--sig-bg:#fff0e6;--q:#a9780f;--q-bg:#fdf3dc;--jade:#13866b;--jade-bg:#e2f5ef;--lun:#3b4a94;--lun-bg:#e9ecfa;--late:#c92a2a;--late-bg:#fdeaea;
+  --f-d:'Fraunces',Georgia,serif;--f-b:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1224;--card:#151d38;--tx:#e8ecf7;--mut:#9aa7c4;--bd:#26315a;--soft:#1b2546;
+  --sig:#ff8a4c;--sig-bg:#3a2316;--q:#e3b04b;--q-bg:#352a10;--jade:#4fd1ae;--jade-bg:#10312b;--lun:#a3b0ff;--lun-bg:#1f2850;--late:#ff7a7a;--late-bg:#3a1a1e;color-scheme:dark}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 var(--f-b);min-height:100%}
+.app{max-width:720px;margin:0 auto;padding:0 14px calc(92px + env(safe-area-inset-bottom,0px))}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sig);outline-offset:2px;border-radius:8px}
+
+/* ----- bầu trời đêm: phần nhấn duy nhất của giao diện ----- */
+.sky{position:relative;overflow:hidden;margin:0 -14px;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 22px;color:#fff;
+  background:radial-gradient(120% 90% at 85% 0%,#3a4c9a 0%,var(--night2) 38%,var(--night) 100%);border-radius:0 0 28px 28px}
+.sky::before{content:"";position:absolute;inset:0;opacity:.55;pointer-events:none;
+  background-image:radial-gradient(1.2px 1.2px at 12% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 30% 60%,#fff 50%,transparent 51%),radial-gradient(1.4px 1.4px at 58% 14%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 70% 72%,#fff 50%,transparent 51%),radial-gradient(1.2px 1.2px at 92% 48%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 44% 86%,#fff 50%,transparent 51%)}
+.sky-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative}
+.dow{font-size:15px;opacity:.85;margin:0}
+.big{font-family:var(--f-d);font-weight:800;font-size:clamp(40px,12vw,58px);line-height:1;margin:4px 0 8px;letter-spacing:-.01em}
+.lunl{font-size:15px;opacity:.92;margin:0}.lunl b{font-weight:600}
+.moon{flex:none;width:96px;height:96px;filter:drop-shadow(0 0 18px rgba(227,176,75,.45));animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{transform:translateY(26px) scale(.9);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.moon{animation:none}}
+.next{position:relative;margin-top:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:10px 14px;font-size:15px;backdrop-filter:blur(4px)}
+.next small{display:block;opacity:.75;font-size:13px}.next b{font-weight:600}
+.sync{position:absolute;right:20px;bottom:6px;font-size:11px;opacity:.6}
+
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 6px}
+.num{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:10px 6px;text-align:center}
+.num b{display:block;font-family:var(--f-d);font-size:30px;line-height:1.1;font-weight:800}
+.num span{font-size:12.5px;color:var(--mut);line-height:1.2;display:block}
+.num.late b{color:var(--late)}.num.zero b{color:var(--mut)}
+
+h2{font-family:var(--f-d);font-size:20px;font-weight:800;margin:22px 2px 8px}
+.mu{color:var(--mut);font-size:14px;margin:6px 2px}
+.mu a{color:var(--lun)}
+
+/* ----- nhóm và dòng việc ----- */
+.grp{margin:0 0 12px;background:var(--card);border:1px solid var(--bd);border-radius:18px;overflow:hidden}
+.grp>h3{margin:0;padding:11px 14px;font-size:15px;font-weight:600;display:flex;gap:8px;align-items:center;justify-content:space-between;background:var(--soft)}
+.grp>h3 em{font-style:normal;font-size:13px;font-weight:600;padding:1px 9px;border-radius:99px;background:var(--bd);color:var(--tx)}
+.grp.late>h3{background:var(--late-bg);color:var(--late)}.grp.late>h3 em{background:var(--late);color:#fff}
+.grp.warn>h3{background:var(--q-bg);color:var(--q)}.grp.warn>h3 em{background:var(--q);color:#fff}
+.grp.lun>h3{background:var(--lun-bg);color:var(--lun)}.grp.lun>h3 em{background:var(--lun);color:#fff}
+.grp.ok>h3{background:var(--jade-bg);color:var(--jade)}
+.grp ul{list-style:none;margin:0;padding:4px 14px 10px}.grp li{padding:7px 0;border-top:1px solid var(--bd)}.grp li:first-child{border-top:0}
+.day{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin:16px 4px 6px}.day b{font-family:var(--f-d);font-size:19px;font-weight:800}.day span{font-size:13.5px;color:var(--mut)}
+.day.now b{color:var(--sig)}
+
+.it{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:11px 12px;margin-bottom:8px;position:relative}
+.it::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;border-radius:0 4px 4px 0;background:var(--bd)}
+.it.pK::before{background:var(--sig)}.it.pQ::before{background:var(--gold)}.it.lunar::before{background:var(--lun)}
+.it .t{flex:1;min-width:0}.it .t b{display:block;font-weight:600;overflow-wrap:anywhere}
+.it .m{display:flex;flex-wrap:wrap;gap:4px 8px;font-size:13.5px;color:var(--mut);margin-top:2px;align-items:center}
+.it.dn .t b{text-decoration:line-through;color:var(--mut)}
+.tag{font-size:12.5px;font-weight:600;padding:1px 8px;border-radius:99px;background:var(--soft);color:var(--mut)}
+.tag.k{background:var(--sig-bg);color:var(--sig)}.tag.q{background:var(--q-bg);color:var(--q)}.tag.l{background:var(--late-bg);color:var(--late)}.tag.w{background:var(--q-bg);color:var(--q)}.tag.n{background:var(--lun-bg);color:var(--lun)}
+.ck{flex:none;position:relative;width:28px;height:28px}
+.ck input{appearance:none;-webkit-appearance:none;width:28px;height:28px;border:2px solid var(--mut);border-radius:9px;margin:0;cursor:pointer;display:grid;place-content:center;background:var(--card);transition:background .15s,border-color .15s}
+.ck input:checked{background:var(--jade);border-color:var(--jade)}
+.ck input:checked::after{content:"";width:6px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.mk{flex:none;width:28px;height:28px;border-radius:50%;background:var(--lun-bg);color:var(--lun);display:grid;place-content:center;font-size:15px}
+.ic{flex:none;position:relative;width:40px;height:40px;border:0;border-radius:12px;background:var(--soft);color:var(--mut);display:grid;place-content:center;cursor:pointer;font-size:17px;text-decoration:none}
+.ic.del{color:var(--late)}.ic:active{transform:scale(.94)}
+.ic input[type=date]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.b{border:0;border-radius:14px;background:var(--sig);color:#fff;font-weight:600;padding:12px 18px;cursor:pointer;min-height:46px}
+.b.alt{background:var(--lun)}.b:active{transform:scale(.98)}
+
+/* ----- biểu mẫu ----- */
+.form{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;display:grid;gap:10px}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}
+input[type=date],input[type=time]{-webkit-appearance:none;appearance:none;display:block;min-width:0;text-align:left;font-family:inherit}
+.form label.f{display:grid;gap:3px;font-size:13.5px;color:var(--mut)}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=password],select{width:100%;padding:11px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--soft);min-height:46px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.seg span{display:block;text-align:center;padding:10px 4px;border:1.5px solid var(--bd);border-radius:12px;font-size:14px;font-weight:600;background:var(--soft);line-height:1.25}
+.seg small{display:block;font-weight:400;font-size:12px;color:var(--mut)}
+.seg input:checked+span{border-color:var(--sig);background:var(--sig-bg);color:var(--sig)}
+.seg.l input:checked+span{border-color:var(--lun);background:var(--lun-bg);color:var(--lun)}
+.seg input:focus-visible+span{outline:3px solid var(--sig);outline-offset:2px}
+
+/* ----- lịch tháng ----- */
+.nav{display:flex;align-items:center;justify-content:space-between;margin:10px 0 8px}
+.nav b{font-family:var(--f-d);font-size:21px;font-weight:800}
+.nav button{width:46px;height:46px;border:1px solid var(--bd);background:var(--card);border-radius:14px;font-size:20px;cursor:pointer}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal .h{text-align:center;font-size:12.5px;color:var(--mut);padding:2px}
+.d{aspect-ratio:1;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:4px 0 0;font-size:16px;font-weight:500;cursor:pointer;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;line-height:1.15}
+.d i{font-style:normal;font-size:11.5px;color:var(--mut);font-weight:400}.d.o{opacity:.35}
+.d.t{border-color:var(--sig);box-shadow:inset 0 0 0 1.5px var(--sig)}
+.d.m i{color:var(--lun);font-weight:700}
+.d.s{background:var(--night);color:#fff;border-color:var(--night)}.d.s i{color:#c9d2ff}
+.d u{position:absolute;bottom:4px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.pick{margin-top:12px}
+
+/* ----- thanh điều hướng dưới ----- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;padding:0 10px calc(8px + env(safe-area-inset-bottom,0px));pointer-events:none}
+.bar nav{pointer-events:auto;width:100%;max-width:520px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:6px;background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid var(--bd);border-radius:22px;box-shadow:0 8px 28px rgba(12,18,36,.22);backdrop-filter:blur(10px)}
+.bar button{border:0;background:none;padding:8px 4px 6px;border-radius:16px;color:var(--mut);cursor:pointer;display:grid;justify-items:center;gap:1px;font-size:13px;font-weight:600}
+.bar button svg{width:24px;height:24px}
+.bar button.on{background:var(--night);color:#fff}
+
+#lg{display:none;position:fixed;inset:0;z-index:9;background:var(--bg);align-items:center;justify-content:center;padding:20px}
+#lg .box{width:100%;max-width:360px;background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:22px;display:grid;gap:10px}
+#lg h1{font-family:var(--f-d);font-size:26px;margin:0 0 4px}
+.foot{margin-top:24px;padding:14px;border-radius:18px;background:var(--card);border:1px solid var(--bd);font-size:14px;color:var(--mut)}
+.foot b{color:var(--tx)}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script></head><body><div class="app">
-<div class="hero"><span class="chip" id="st">…</span><small id="hd"></small><h1 id="hd2"></h1><div class="l" id="hl"></div></div>
-<div class="stats" id="stats"></div>
-<div class="tabs"><button data-t="0" class="on">Hôm nay</button><button data-t="1">Dương lịch</button><button data-t="2">Âm lịch</button></div>
-<div id="p0"></div><div id="p1" hidden></div><div id="p2" hidden></div>
-<h2>Thông báo Telegram</h2><div class="mu" id="tgs"></div><div class="mu"><a href="#" onclick="logout();return false">Đăng xuất</a></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script></head><body>
+<div class="app">
+  <header class="sky">
+    <div class="sky-top">
+      <div><p class="dow" id="hd"></p><div class="big" id="hd2"></div><p class="lunl" id="hl"></p></div>
+      <div class="moon" id="moon" aria-hidden="true"></div>
+    </div>
+    <div class="next" id="next"></div>
+    <span class="sync" id="st">…</span>
+  </header>
+  <div class="nums" id="stats"></div>
+  <main>
+    <div id="p0"></div><div id="p1" hidden></div><div id="p2" hidden></div>
+  </main>
+  <div class="foot" id="tgs"></div>
+  <p class="mu"><a href="#" onclick="logout();return false">Đăng xuất</a></p>
 </div>
-<div id="lg" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9;align-items:center;justify-content:center;padding:20px"><div class="card" style="width:100%;max-width:340px"><h3>Đăng nhập Sổ nhắc việc</h3><input type="text" id="le" placeholder="Email" style="width:100%;margin:6px 0"><input type="password" id="lp" placeholder="Mật khẩu" style="width:100%;margin:6px 0"><button class="b" onclick="login()" style="width:100%">Đăng nhập</button><div id="lerr" class="mu" style="color:var(--rd)"></div></div></div>
+<div class="bar"><nav aria-label="Chuyển mục" id="tabs">
+  <button data-t="0" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Hôm nay</button>
+  <button data-t="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18M8 15l2.5 2.5L16 13"/></svg>Dương lịch</button>
+  <button data-t="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>Âm lịch</button>
+</nav></div>
+<div id="lg"><div class="box"><h1>Sổ nhắc việc</h1><input type="text" id="lgE" placeholder="Email" autocomplete="username"><input type="password" id="lgP" placeholder="Mật khẩu" autocomplete="current-password"><button class="b" onclick="login()">Đăng nhập</button><div id="lerr" class="mu" style="color:var(--late)"></div></div></div>
 <script>
 const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0'),P=k=>k.split('-').map(Number);
 const K=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
@@ -91,59 +194,88 @@ function gcal(title,k,rrule){const c=s=>s.replace(/-/g,''),u='https://calendar.g
 return '<a href="'+u+'" target="_blank" rel="noopener">+ Lịch</a>'}
 const RR={'Ngày':'FREQ=DAILY','Tuần':'FREQ=WEEKLY','Tháng':'FREQ=MONTHLY'};
 /* ---- dựng giao diện ---- */
-function card(c,t,items){return items.length?'<div class="card '+c+'"><h3>'+t+'</h3><ul>'+items.map(i=>'<li>'+i+'</li>').join('')+'</ul></div>':''}
-const tl=t=>esc(t.t)+' <span style="color:var(--mut)">(hạn '+fm(t.due,1)+')</span>';
-function renderToday(){const t=TODAY(),open=S.tasks.filter(x=>!x.done&&x.due),late=open.filter(x=>x.due<t),dd=P(t)[2],last=dim(t),h=[];
-h.push(card('r','Việc đến hạn hôm nay',open.filter(x=>x.due===t).map(tl)));
-if(dowK(t)===1){h.push(card('w','Đầu tuần – việc tồn đọng chưa hoàn thành',late.map(tl)));h.push(card('','Đầu tuần – việc đến hạn trong tuần',open.filter(x=>x.due>t&&x.due<=add(t,6)).map(tl)))}
-else h.push(card('r','Việc quá hạn chưa hoàn thành',late.map(tl)));
-if(dd>=last-2){const eom=t.slice(0,8)+pad(last);h.push(card('w','Cuối tháng – chưa có xác nhận hoàn thành (còn '+(last-dd)+' ngày)',open.filter(x=>x.due<=eom).map(tl)))}
+const dd=(a,b)=>Math.round((new Date(...P(b).map((v,i)=>i===1?v-1:v))-new Date(...P(a).map((v,i)=>i===1?v-1:v)))/864e5);
+const rel=k=>{const n=dd(TODAY(),k);return n===0?'Hôm nay':n===1?'Ngày mai':n===2?'Ngày kia':n<0?'Quá hạn '+(-n)+' ngày':DOW[dowK(k)]+' '+fm(k)};
+const PRN={K:'🚨 Khẩn',Q:'🔔 Quan trọng'};
+function moonSvg(d){const R=44,ph=((d-1)%29.53)/29.53,a=ph*2*Math.PI,f=(1-Math.cos(a))/2,rx=(Math.abs(Math.cos(a))*R).toFixed(2),sw=f>.5?1:0;
+const lit='M50 '+(50-R)+' A'+R+' '+R+' 0 0 1 50 '+(50+R)+' A'+rx+' '+R+' 0 0 '+sw+' 50 '+(50-R)+'Z';
+return '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#232e63" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/><path d="'+lit+'" fill="#f6e7b4"'+(ph<.5?'':' transform="translate(100 0) scale(-1 1)"')+'/></svg>'}
+function taskRow(x,showDate){const t=TODAY(),late=x.due&&x.due<t&&!x.done,tg=[];
+if(!x.due)tg.push('<span class="tag w">Chờ bổ sung thông tin</span>');
+else if(late)tg.push('<span class="tag l">'+rel(x.due)+'</span>');
+else if(showDate)tg.push('<span class="tag">'+rel(x.due)+' · '+fm(x.due,1)+'</span>');
+if(PRN[x.pr])tg.push('<span class="tag '+(x.pr==='K'?'k':'q')+'">'+PRN[x.pr]+' · '+(x.g||'07:30')+'</span>');
+if(x.o)tg.push('<span>PT: '+esc(x.o)+'</span>');
+if(x.rep&&x.rep!=='Không')tg.push('<span>lặp theo '+x.rep.toLowerCase()+'</span>');
+return '<div class="it'+(PRN[x.pr]?' p'+x.pr:'')+(x.done?' dn':'')+'"><label class="ck"><input type="checkbox" aria-label="Đánh dấu xong" '+(x.done?'checked':'')+' onchange="tog('+x.id+')"></label><div class="t"><b>'+esc(x.t)+'</b><div class="m">'+tg.join('')+'</div></div>'+
+(x.done?'':'<label class="ic" title="'+(x.due?'Đổi hạn chót':'Đặt hạn chót')+'" aria-label="Đổi hạn chót">✎<input type="date" value="'+(x.due||'')+'" onchange="chDue('+x.id+',this.value)"></label>')+
+'<button class="ic del" aria-label="Xóa việc" onclick="delT('+x.id+')">✕</button></div>'}
+function lunRow(e,k){const l=lun(k);return '<div class="it lunar"><span class="mk">☾</span><div class="t"><b>'+esc(e.t)+'</b><div class="m"><span class="tag n">Âm lịch '+l.d+'/'+l.m+'</span>'+(PRN[e.pr||'Q']?'<span class="tag '+((e.pr||'Q')==='K'?'k':'q')+'">'+PRN[e.pr||'Q']+' · '+(e.g||'07:30')+'</span>':'')+'</div></div></div>'}
+const grp=(c,t,items)=>items.length?'<section class="grp '+c+'"><h3><span>'+t+'</span><em>'+items.length+'</em></h3><ul>'+items.map(i=>'<li>'+i+'</li>').join('')+'</ul></section>':'';
+const dayH=(k,n)=>{const l=lun(k);return '<div class="day'+(n===0?' now':'')+'"><b>'+rel(k)+'</b><span>'+fm(k,1)+' · âm lịch '+l.d+'/'+l.m+'</span></div>'};
+function nextUp(){const t=TODAY(),c=[];S.tasks.filter(x=>!x.done&&x.due&&x.due>=t).forEach(x=>c.push([x.due,0,x.t]));S.lunar.filter(e=>!e.p&&e.pr!=='T').forEach(e=>c.push([nextOcc(e),1,e.t]));
+c.sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:a[1]-b[1]);if(!c.length)return '<small>Sắp tới</small><b>Chưa có việc nào</b>';
+return '<small>Sắp tới</small><b>'+esc(c[0][2])+'</b> · '+rel(c[0][0]).toLowerCase()+' ('+fm(c[0][0])+')'}
+function renderToday(){const t=TODAY(),open=S.tasks.filter(x=>!x.done&&x.due),late=open.filter(x=>x.due<t),dm=P(t)[2],last=dim(t),h=[];
+if(late.length)h.push('<div class="day"><b style="color:var(--late)">Quá hạn</b><span>'+late.length+' việc chưa hoàn thành</span></div>'+late.sort((a,b)=>a.due<b.due?-1:1).map(x=>taskRow(x,true)).join(''));
+let any=false;
+for(let i=0;i<7;i++){const k=add(t,i),tk=open.filter(x=>x.due===k),ev=lunOn(k);if(!tk.length&&!ev.length)continue;any=true;
+h.push(dayH(k,i)+tk.map(x=>taskRow(x,false)).join('')+ev.map(e=>lunRow(e,k)).join(''))}
+if(!any&&!late.length)h.push('<section class="grp ok"><h3><span>Không có việc nào trong 7 ngày tới.</span></h3></section>');
+const notes=[];
+if(dm>=last-2){const eom=t.slice(0,8)+pad(last);notes.push(grp('warn','Cuối tháng – chưa có xác nhận hoàn thành (còn '+(last-dm)+' ngày)',open.filter(x=>x.due<=eom).map(x=>esc(x.t)+' <span class="mu">hạn '+fm(x.due,1)+'</span>')))}
 const l=lun(t);if(l.d===1){const it=[];for(let i=0;i<30;i++){const k=add(t,i);if(i&&lun(k).d===1)break;lunOn(k).forEach(e=>it.push(fm(k)+' ('+lun(k).d+'/'+lun(k).m+' âm): '+esc(e.t)))}
-h.push(card('a','Mùng 1 – việc cần chú ý trong tháng '+l.m+(l.leap?' nhuận':'')+' âm lịch',it))}
-h.push(card('a','Hôm nay (âm lịch '+l.d+'/'+l.m+')',lunOn(t).map(e=>esc(e.t))));
-for(let i=1;i<=2;i++)h.push(card('g','Âm lịch – còn '+i+' ngày nữa ('+fm(add(t,i))+')',lunOn(add(t,i),i).map(e=>esc(e.t))));
-const wait=S.tasks.filter(x=>!x.done&&!x.due).map(x=>esc(x.t));h.push(card('w','CHỜ BỔ SUNG THÔNG TIN – chưa có hạn chót (hệ thống không tự đặt hạn)',wait));
-const pend=S.lunar.filter(e=>e.p).map(e=>esc(e.t)+' ('+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm)');h.push(card('w','CẦN XÁC NHẬN – ngày cúng/giỗ do hệ thống đề xuất, chưa được nhắc (vào tab Âm lịch để xác nhận)',pend));
-const cf=[];for(let i=0;i<=3;i++){const k=add(t,i),ev=lunOn(k),tk=open.filter(x=>x.due===k);if(ev.length&&tk.length)cf.push(fm(k)+': '+ev.map(e=>esc(e.t)).join(', ')+' trùng việc '+tk.map(x=>esc(x.t)).join(', ')+'<br>Phương án 1: làm việc đó sớm hơn 1 ngày. Phương án 2: dời việc sang sau ngày cúng.')}h.push(card('r','XUNG ĐỘT LỊCH cúng/giỗ và công việc',cf));
-const body=h.join('')||'<div class="card g"><h3>Hôm nay không có việc nào cần xử lý.</h3></div>';
-$('#p0').innerHTML=body+'<h2>Gắn nhắc nhở cố định vào lịch điện thoại</h2><div class="mu">'+
-gcal('Rà soát việc tồn đọng đầu tuần',add(t,(8-dowK(t))%7||7),'FREQ=WEEKLY;BYDAY=MO')+' · Thứ hai hằng tuần<br>'+
-gcal('Xác nhận hoàn thành việc trong tháng (còn 2 ngày cuối tháng)',t.slice(0,8)+pad(Math.max(1,last-2)),'FREQ=MONTHLY;BYMONTHDAY=-3')+' · Trước 2 ngày cuối tháng</div>'}
-function renderStats(){const t=TODAY(),o=S.tasks.filter(x=>!x.done&&x.due),n=lun(t);let c=0;for(let i=0;i<7;i++)c+=lunOn(add(t,i)).length;
-$('#stats').innerHTML=[[o.filter(x=>x.due<t).length,'Quá hạn'],[o.filter(x=>x.due>=t&&x.due<=add(t,6)).length,'Việc 7 ngày tới'],[c,'Lễ âm lịch 7 ngày tới']].map(a=>'<div class="st"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('')}
-function renderTasks(){const t=TODAY(),all=S.tasks.filter(x=>!x.done),wait=all.filter(x=>!x.due),o=all.filter(x=>x.due).sort((a,b)=>a.due<b.due?-1:1),dn=S.tasks.filter(x=>x.done).slice(-8).reverse();
-const own=x=>x.o?' · PT: '+esc(x.o):'';
-const it=x=>'<div class="it'+(x.done?' dn':'')+'"><input type="checkbox" '+(x.done?'checked':'')+' onchange="tog('+x.id+')"><div class="t"><b>'+esc(x.t)+'</b><div>'+(!x.due?'<span style="color:var(--wn)">Chờ bổ sung thông tin · </span><input type="date" onchange="setDue('+x.id+',this.value)">':(x.due<t&&!x.done?'<span style="color:var(--rd)">Quá hạn · </span>':'')+fm(x.due,1))+(x.rep&&x.rep!=='Không'?' · lặp theo '+x.rep.toLowerCase():'')+own(x)+'</div></div>'+(x.done||!x.due?'':gcal(x.t,x.due,RR[x.rep]))+'<button class="x" onclick="delT('+x.id+')">×</button></div>';
-$('#p1').innerHTML='<div class="row"><input type="text" id="nt" placeholder="Việc cần làm…"><input type="date" id="nd"><input type="text" id="no" placeholder="Người phụ trách"><select id="nr"><option>Không</option><option>Ngày</option><option>Tuần</option><option>Tháng</option></select><button class="b" onclick="addT()">Thêm</button></div><div class="mu">Chưa có hạn chót thì để trống: việc vào mục “Chờ bổ sung thông tin”, hệ thống không tự đặt hạn.</div>'+
-(wait.length?'<h2>Chờ bổ sung thông tin ('+wait.length+')</h2>'+wait.map(it).join(''):'')+'<h2>Đang chờ ('+o.length+')</h2>'+(o.map(it).join('')||'<div class="mu">Không còn việc nào.</div>')+(dn.length?'<h2>Đã xong gần đây</h2>'+dn.map(it).join(''):'')}
+notes.push(grp('lun','Mùng 1 – việc cần chú ý trong tháng '+l.m+(l.leap?' nhuận':'')+' âm lịch',it))}
+const cf=[];for(let i=0;i<=3;i++){const k=add(t,i),ev=lunOn(k),tk=open.filter(x=>x.due===k);if(ev.length&&tk.length)cf.push('<b>'+fm(k)+'</b>: '+ev.map(e=>esc(e.t)).join(', ')+' trùng việc '+tk.map(x=>esc(x.t)).join(', ')+'<br><span class="mu">Phương án 1: làm việc đó sớm hơn 1 ngày. Phương án 2: dời việc sang sau ngày cúng.</span>')}
+notes.push(grp('late','Xung đột lịch cúng/giỗ và công việc',cf));
+const pend=S.lunar.filter(e=>e.p);notes.push(grp('warn','Cần xác nhận – chưa được nhắc (vào tab Âm lịch để xác nhận)',pend.map(e=>esc(e.t)+' <span class="mu">('+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm)</span>')));
+const wait=S.tasks.filter(x=>!x.done&&!x.due);
+$('#p0').innerHTML=(h.join('')||'')+notes.join('')+(wait.length?'<div class="day"><b>Chờ bổ sung thông tin</b><span>hệ thống không tự đặt hạn</span></div>'+wait.map(x=>taskRow(x,false)).join(''):'')+
+'<p class="mu">Nhắc cố định trong lịch điện thoại. Thứ Hai hằng tuần: '+gcal('Rà soát việc tồn đọng đầu tuần',add(t,(8-dowK(t))%7||7),'FREQ=WEEKLY;BYDAY=MO')+'. Hai ngày cuối tháng: '+gcal('Xác nhận hoàn thành việc trong tháng',t.slice(0,8)+pad(Math.max(1,last-2)),'FREQ=MONTHLY;BYMONTHDAY=-3')+'.</p>'}
+function renderStats(){const t=TODAY(),o=S.tasks.filter(x=>!x.done&&x.due);let c=0;for(let i=0;i<7;i++)c+=lunOn(add(t,i)).length;
+const lt=o.filter(x=>x.due<t).length,wk=o.filter(x=>x.due>=t&&x.due<=add(t,6)).length;
+$('#stats').innerHTML=[[lt,'Quá hạn',lt?'late':'zero'],[wk,'Việc 7 ngày tới',wk?'':'zero'],[c,'Lễ âm lịch 7 ngày tới',c?'':'zero']].map(a=>'<div class="num '+a[2]+'"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('')}
+const seg=(name,cls,def)=>'<div class="seg '+cls+'" role="radiogroup" aria-label="Mức nhắc">'+[['T','Thường','bản tin sáng'],['Q','🔔 Quan trọng','nhắc mỗi giờ'],['K','🚨 Khẩn','nhắc mỗi 15 phút']].map(o=>'<label><input type="radio" name="'+name+'" value="'+o[0]+'"'+(o[0]===def?' checked':'')+'><span>'+o[1]+'<small>'+o[2]+'</small></span></label>').join('')+'</div>';
+const rv=n=>document.querySelector('input[name='+n+']:checked').value;
+function renderTasks(){const all=S.tasks.filter(x=>!x.done),wait=all.filter(x=>!x.due),o=all.filter(x=>x.due).sort((a,b)=>a.due<b.due?-1:1),dn=S.tasks.filter(x=>x.done).slice(-8).reverse();
+$('#p1').innerHTML='<h2>Thêm việc</h2><div class="form"><label class="f">Việc cần làm<input type="text" id="nt" placeholder="Ví dụ: Nộp báo cáo vật tư"></label>'+
+'<div class="two"><label class="f">Hạn chót<input type="date" id="nd"></label><label class="f">Người phụ trách<input type="text" id="no"></label></div>'+
+seg('npv','',"T")+'<div class="two"><label class="f">Giờ nhắc<input type="time" id="ng" value="07:30"></label><label class="f">Lặp lại<select id="nr"><option>Không</option><option>Ngày</option><option>Tuần</option><option>Tháng</option></select></label></div>'+
+'<button class="b" onclick="addT()">Thêm việc</button><div class="mu" style="margin:0">Để trống hạn chót thì việc vào mục “Chờ bổ sung thông tin”; hệ thống không tự đặt hạn.</div></div>'+
+(wait.length?'<h2>Chờ bổ sung thông tin ('+wait.length+')</h2>'+wait.map(x=>taskRow(x,false)).join(''):'')+'<h2>Đang chờ ('+o.length+')</h2>'+(o.map(x=>taskRow(x,true)).join('')||'<p class="mu">Không còn việc nào.</p>')+(dn.length?'<h2>Đã xong gần đây</h2>'+dn.map(x=>taskRow(x,false)).join(''):'')}
 function renderLunar(){const y=view.getFullYear(),m=view.getMonth(),f=new Date(y,m,1),off=(f.getDay()+6)%7,t=TODAY();let g=['T2','T3','T4','T5','T6','T7','CN'].map(x=>'<div class="h">'+x+'</div>').join('');
 for(let i=0;i<42;i++){const k=K(new Date(y,m,1-off+i)),l=lun(k),o=P(k)[1]-1!==m,ev=lunOn(k).length||S.tasks.some(x=>!x.done&&x.due===k);
-g+='<button class="d'+(o?' o':'')+(k===t?' t':'')+(k===sel?' s':'')+(l.d===1?' m':'')+'" onclick="pick(\''+k+'\')">'+P(k)[2]+'<i>'+(l.d===1?l.d+'/'+l.m:l.d)+'</i>'+(ev?'<u></u>':'')+'</button>'}
+g+='<button class="d'+(o?' o':'')+(k===t?' t':'')+(k===sel?' s':'')+(l.d===1?' m':'')+'" aria-label="'+fm(k,1)+', âm lịch '+l.d+'/'+l.m+'" onclick="pick(\''+k+'\')">'+P(k)[2]+'<i>'+(l.d===1?l.d+'/'+l.m:l.d)+'</i>'+(ev?'<u></u>':'')+'</button>'}
 const sl2=lun(sel),ev=lunOn(sel),tk=S.tasks.filter(x=>!x.done&&x.due===sel);
-const eit=e=>'<div class="it"><div class="t"><b>'+esc(e.t)+'</b>'+(e.p?' <span style="color:var(--wn);font-size:12px">CẦN XÁC NHẬN</span>':'')+'<div>'+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm · nhắc trước '+e.b+' ngày'+(e.p?' · chưa được nhắc':' · kế tiếp '+fm(nextOcc(e),1))+'</div></div>'+(e.p?'<button class="b" onclick="okL('+e.id+')">Xác nhận</button>':gcal(e.t,nextOcc(e)))+'<button class="x" onclick="delL('+e.id+')">×</button></div>';
-$('#p2').innerHTML='<div class="nav"><button onclick="mv(-1)">‹</button><b>Tháng '+(m+1)+'/'+y+'</b><button onclick="mv(1)">›</button></div><div class="cal">'+g+'</div>'+
-'<div class="card a" style="margin-top:10px"><h3>'+fm(sel,1)+' = '+sl2.d+'/'+sl2.m+(sl2.leap?' nhuận':'')+' âm lịch, năm '+cc(sl2.y)+'</h3>'+(ev.length||tk.length?'<ul>'+ev.map(e=>'<li>'+esc(e.t)+'</li>').join('')+tk.map(x=>'<li>'+esc(x.t)+' (việc)</li>').join('')+'</ul>':'<span class="mu">Không có việc.</span>')+'</div>'+
-'<h2>Thêm việc âm lịch (lặp lại tự động mỗi năm)</h2><div class="row"><input type="text" id="lt" placeholder="Tên việc, ví dụ: Giỗ…"><input type="number" id="ld" min="1" max="30" placeholder="Ngày"><input type="number" id="lm" min="0" max="12" placeholder="Tháng"><select id="lb"><option value="0">Nhắc đúng ngày</option><option value="1" selected>Trước 1 ngày</option><option value="2">Trước 2 ngày</option></select><button class="b" onclick="addL()">Thêm</button></div><div class="mu">Tháng để 0 hoặc trống = lặp hằng tháng.</div>'+
+const eit=e=>'<div class="it lunar"><span class="mk">☾</span><div class="t"><b>'+esc(e.t)+'</b><div class="m"><span class="tag n">'+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm</span>'+(e.p?'<span class="tag w">Cần xác nhận · chưa được nhắc</span>':'<span>kế tiếp '+fm(nextOcc(e),1)+'</span>')+'<span>báo trước '+e.b+' ngày</span>'+(e.pr&&PRN[e.pr]?'<span class="tag '+(e.pr==='K'?'k':'q')+'">'+PRN[e.pr]+'</span>':'')+'</div></div>'+(e.p?'<button class="b alt" onclick="okL('+e.id+')">Xác nhận</button>':'')+'<button class="ic del" aria-label="Xóa" onclick="delL('+e.id+')">✕</button></div>';
+$('#p2').innerHTML='<div class="nav"><button aria-label="Tháng trước" onclick="mv(-1)">‹</button><b>Tháng '+(m+1)+'/'+y+'</b><button aria-label="Tháng sau" onclick="mv(1)">›</button></div><div class="cal">'+g+'</div>'+
+'<section class="grp lun pick"><h3><span>'+fm(sel,1)+' = '+sl2.d+'/'+sl2.m+(sl2.leap?' nhuận':'')+' âm lịch, năm '+cc(sl2.y)+'</span></h3>'+(ev.length||tk.length?'<ul>'+ev.map(e=>'<li>'+esc(e.t)+'</li>').join('')+tk.map(x=>'<li>'+esc(x.t)+' <span class="mu">(việc)</span></li>').join('')+'</ul>':'<ul><li class="mu">Không có việc.</li></ul>')+'</section>'+
+'<h2>Thêm ngày âm lịch</h2><div class="form"><label class="f">Tên<input type="text" id="lt" placeholder="Ví dụ: Giỗ ông nội"></label><div class="two"><label class="f">Ngày âm<input type="number" id="ld" min="1" max="30" inputmode="numeric"></label><label class="f">Tháng âm (0 = mọi tháng)<input type="number" id="lm" min="0" max="12" inputmode="numeric" value="0"></label></div>'+
+'<div class="two"><label class="f">Báo trước<select id="lb"><option value="0">Đúng ngày</option><option value="1" selected>Trước 1 ngày</option><option value="2">Trước 2 ngày</option></select></label><label class="f">Giờ nhắc<input type="time" id="lg" value="07:30"></label></div>'+seg('lpv','l',"Q")+
+'<button class="b alt" onclick="addL()">Thêm ngày âm lịch</button><div class="mu" style="margin:0">Tự lặp lại mỗi năm theo âm lịch.</div></div>'+
 '<h2>Danh sách ('+S.lunar.length+')</h2>'+S.lunar.slice().sort((a,b)=>(a.m||0)-(b.m||0)||a.d-b.d).map(eit).join('')}
-function render(){const t=TODAY(),l=lun(t);$('#hd').textContent=DOW[dowK(t)];$('#hd2').textContent=fm(t,1);$('#hl').textContent='Âm lịch '+l.d+'/'+l.m+(l.leap?' nhuận':'')+' · năm '+cc(l.y);renderStats();renderToday();renderTasks();renderLunar()}
+function render(){const t=TODAY(),l=lun(t);$('#hd').textContent=DOW[dowK(t)];$('#hd2').textContent=fm(t,1);$('#hl').innerHTML='Âm lịch <b>'+l.d+'/'+l.m+(l.leap?' nhuận':'')+'</b> · năm '+cc(l.y);$('#moon').innerHTML=moonSvg(l.d);$('#next').innerHTML=nextUp();renderStats();renderToday();renderTasks();renderLunar()}
 /* ---- thao tác ---- */
 const nid=()=>Date.now()+Math.floor(Math.random()*1000);
-function addT(){const t=$('#nt').value.trim(),d=$('#nd').value;if(!t)return;S.tasks.push({id:nid(),t,due:d||'',o:$('#no').value.trim(),rep:$('#nr').value,done:false});save();render();tab=1}
-function setDue(id,d){if(!d)return;const x=S.tasks.find(a=>a.id===id);if(!confirm('Đặt hạn chót '+fm(d,1)+' cho việc "'+x.t+'". Xác nhận?'))return;x.due=d;save();render()}
-function tog(id){const x=S.tasks.find(a=>a.id===id);x.done=!x.done;if(x.done&&x.due&&x.rep&&x.rep!=='Không'){let n=x.due;do{const[a,b,c]=P(n);n=x.rep==='Ngày'?add(n,1):x.rep==='Tuần'?add(n,7):K(new Date(a,b,Math.min(c,new Date(a,b+1,0).getDate())))}while(n<TODAY());S.tasks.push({id:nid(),t:x.t,due:n,o:x.o||'',rep:x.rep,done:false})}save();render()}
+function addT(){const t=$('#nt').value.trim(),d=$('#nd').value;if(!t)return;S.tasks.push({id:nid(),t,due:d||'',o:$('#no').value.trim(),rep:$('#nr').value,pr:rv('npv'),g:$('#ng').value||'07:30',done:false});save();render();tab=1}
+function tog(id){const x=S.tasks.find(a=>a.id===id);x.done=!x.done;if(x.done&&x.due&&x.rep&&x.rep!=='Không'){let n=x.due;do{const[a,b,c]=P(n);n=x.rep==='Ngày'?add(n,1):x.rep==='Tuần'?add(n,7):K(new Date(a,b,Math.min(c,new Date(a,b+1,0).getDate())))}while(n<TODAY());S.tasks.push({id:nid(),t:x.t,due:n,o:x.o||'',rep:x.rep,pr:x.pr||'T',g:x.g||'07:30',done:false})}save();render()}
+function chDue(id,d){const x=S.tasks.find(a=>a.id===id);if(!d||d===x.due){render();return}
+const msg=x.due?'Hành động: đổi hạn chót việc "'+x.t+'"\nDữ liệu đổi: '+fm(x.due,1)+' → '+fm(d,1)+'\nẢnh hưởng: nhắc việc, chuông và Google Calendar sẽ theo ngày mới. Xác nhận?':'Hành động: đặt hạn chót '+fm(d,1)+' cho việc "'+x.t+'". Xác nhận?';
+if(!confirm(msg)){render();return}x.due=d;save();render()}
 function delT(id){const x=S.tasks.find(a=>a.id===id);if(!confirm('Hành động: xóa việc "'+x.t+'". Việc sẽ mất khỏi danh sách và lịch nhắc, không hoàn tác. Xác nhận xóa?'))return;S.tasks=S.tasks.filter(a=>a.id!==id);save();render()}
-function addL(){const t=$('#lt').value.trim(),d=+$('#ld').value,m=+$('#lm').value||0;if(!t||d<1||d>30||m<0||m>12)return;if(!confirm('Thêm việc âm lịch "'+t+'" vào ngày '+d+(m?'/'+m:' hằng tháng')+' âm lịch, nhắc trước '+$('#lb').value+' ngày.'+(d===30?' Lưu ý: tháng thiếu không có ngày 30, hệ thống sẽ nhắc vào ngày 29.':'')+' Xác nhận lưu?'))return;S.lunar.push({id:nid(),t,d,m,b:+$('#lb').value});save();render()}
+function addL(){const t=$('#lt').value.trim(),d=+$('#ld').value,m=+$('#lm').value||0;if(!t||d<1||d>30||m<0||m>12)return;if(!confirm('Thêm việc âm lịch "'+t+'" vào ngày '+d+(m?'/'+m:' hằng tháng')+' âm lịch, nhắc trước '+$('#lb').value+' ngày.'+(d===30?' Lưu ý: tháng thiếu không có ngày 30, hệ thống sẽ nhắc vào ngày 29.':'')+' Xác nhận lưu?'))return;S.lunar.push({id:nid(),t,d,m,b:+$('#lb').value,pr:rv('lpv'),g:$('#lg').value||'07:30'});save();render()}
 function okL(id){const x=S.lunar.find(a=>a.id===id);if(!confirm('Xác nhận "'+x.t+'" ('+x.d+(x.m?'/'+x.m:' hằng tháng')+' âm lịch) là ngày chính thức, bắt đầu được nhắc trước '+x.b+' ngày?'))return;delete x.p;save();render()}
 function delL(id){const x=S.lunar.find(a=>a.id===id);if(!confirm('Hành động: xóa ngày "'+x.t+'" khỏi lịch âm. Lịch nhắc của ngày này sẽ mất. Xác nhận xóa?'))return;S.lunar=S.lunar.filter(a=>a.id!==id);save();render()}
 function pick(k){sel=k;renderLunar()}
 function mv(n){view=new Date(view.getFullYear(),view.getMonth()+n,1);renderLunar()}
-document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=+b.dataset.t;document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));[0,1,2].forEach(i=>$('#p'+i).hidden=i!==tab)});
+function setTab(n){tab=n;document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',+x.dataset.t===n));[0,1,2].forEach(i=>$('#p'+i).hidden=i!==n);window.scrollTo({top:0})}
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>setTab(+b.dataset.t));
 render();stt('Lưu trên thiết bị');
 (async()=>{const{data:{session}}=await SB.auth.getSession();if(!session){$('#lg').style.display='flex';return}await boot(session.user)})();
 async function boot(u){uid=u.id;$('#lg').style.display='none';const{data}=await SB.from('app_state').select('data,telegram_chat_id').eq('user_id',uid).maybeSingle();
 if(data&&data.data&&data.data.lunar){S=data.data;render()}else save();tgState(data&&data.telegram_chat_id);stt('Đã lưu trên tài khoản')}
-async function login(){const{data,error}=await SB.auth.signInWithPassword({email:$('#le').value.trim(),password:$('#lp').value});if(error){$('#lerr').textContent='Sai email hoặc mật khẩu';return}await boot(data.user)}
+async function login(){const{data,error}=await SB.auth.signInWithPassword({email:$('#lgE').value.trim(),password:$('#lgP').value});if(error){$('#lerr').textContent='Sai email hoặc mật khẩu';return}await boot(data.user)}
 async function logout(){await SB.auth.signOut();location.reload()}
-function tgState(c){$('#tgs').innerHTML=(c?'Đã ghép nối Telegram. ':'Chưa ghép nối. ')+'<button class="b" onclick="pair()">'+(c?'Ghép lại':'Tạo mã ghép nối')+'</button>'}
+function tgState(c){$('#tgs').innerHTML='<b>Telegram:</b> '+(c?'đã ghép nối. ':'chưa ghép nối. ')+'<button class="b alt" style="min-height:40px;padding:8px 14px;margin-left:6px" onclick="pair()">'+(c?'Ghép lại':'Tạo mã ghép nối')+'</button>'}
 async function pair(){const code=Math.random().toString(36).slice(2,10).padEnd(8,'x');const{error}=await SB.from('app_state').upsert({user_id:uid,pair_code:code});$('#tgs').innerHTML=error?esc(error.message):'Mở bot trong Telegram và gửi: <b>/start '+code+'</b>'}
 </script></body></html>
