@@ -123,6 +123,78 @@ input[type=text],input[type=number],input[type=date],input[type=time],input[type
 #lg h1{font-family:var(--f-d);font-size:26px;margin:0 0 4px}
 .foot{margin-top:24px;padding:14px;border-radius:18px;background:var(--card);border:1px solid var(--bd);font-size:14px;color:var(--mut)}
 .foot b{color:var(--tx)}
+
+/* ===== v2: khối nổi 3D, nút bấm nổi, màu mức nhắc xanh – vàng – đỏ ===== */
+:root{--g:#1f9d55;--g-bg:#e1f6ea;--g-tx:#14703c;--y:#f2b300;--y-bg:#fff4cc;--y-tx:#8a6200;--r:#e03131;--r-bg:#fde8e8;--r-tx:#b02525;
+  --edge:#c0cadd;--btn-top:#ffffff;--btn-bot:#e4e9f4;--lift:0 10px 18px -6px rgba(20,33,61,.28)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--g:#4cd68a;--g-bg:#12331f;--g-tx:#6fe3a2;--y:#ffd24a;--y-bg:#3a2f0c;--y-tx:#ffd24a;--r:#ff7070;--r-bg:#3b1a1c;--r-tx:#ff9a9a;
+  --edge:#05081a;--btn-top:#26335f;--btn-bot:#1a2447;--lift:0 10px 18px -6px rgba(0,0,0,.6)}}
+
+/* tít đầu nổi khối */
+.app{padding-top:calc(12px + env(safe-area-inset-top,0px))}
+.sky{margin:0;padding:20px 20px 24px;border-radius:30px;
+  background:radial-gradient(120% 100% at 85% -10%,#4a5eb8 0%,var(--night2) 40%,#101a40 100%);
+  box-shadow:0 8px 0 #0b1233,0 26px 36px -10px rgba(10,16,48,.65),inset 0 2px 0 rgba(255,255,255,.28),inset 0 -14px 28px rgba(0,0,0,.28);
+  transform:perspective(900px) rotateX(2.5deg);transform-origin:50% 100%}
+.big{text-shadow:0 1px 0 #dfe4ff,0 2px 0 #b9c2f2,0 3px 0 #94a0e0,0 4px 0 #7380cc,0 5px 0 #5461b3,0 14px 18px rgba(0,0,0,.5);letter-spacing:.005em}
+.dow,.lunl{text-shadow:0 2px 3px rgba(0,0,0,.35)}
+.moon{width:104px;height:104px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.55)) drop-shadow(0 0 16px rgba(246,231,180,.35))}
+.next{background:linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.28);box-shadow:0 4px 0 rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.35);border-radius:18px}
+.sync{right:22px;bottom:7px}
+
+/* khối nổi */
+.num,.grp,.it,.form,.foot{box-shadow:0 4px 0 var(--edge),var(--lift)}
+.num{border-radius:18px}
+.grp{border-radius:20px}
+.it{border-radius:18px;padding:12px 12px 12px 18px}
+.it::before{width:8px;top:0;bottom:0;border-radius:18px 0 0 18px;background:var(--g)}
+
+/* mức nhắc: xanh = thường, vàng = quan trọng, đỏ = khẩn */
+.it.pT::before,.it.lunar.pT::before{background:var(--g)}
+.it.pQ::before,.it.lunar.pQ::before{background:var(--y)}
+.it.pK::before,.it.lunar.pK::before{background:var(--r)}
+.it.pT{background:linear-gradient(90deg,var(--g-bg),var(--card) 38%)}
+.it.pQ{background:linear-gradient(90deg,var(--y-bg),var(--card) 38%)}
+.it.pK{background:linear-gradient(90deg,var(--r-bg),var(--card) 38%)}
+.it.dn{background:var(--card);opacity:.7}
+.tag{font-size:13px;font-weight:700;padding:2px 10px;border-radius:99px}
+.tag.g{background:var(--g-bg);color:var(--g-tx);box-shadow:inset 0 0 0 1.5px var(--g)}
+.tag.q{background:var(--y-bg);color:var(--y-tx);box-shadow:inset 0 0 0 1.5px var(--y)}
+.tag.k{background:var(--r-bg);color:var(--r-tx);box-shadow:inset 0 0 0 1.5px var(--r)}
+.tag.l{background:var(--r);color:#fff;box-shadow:none}
+.tag.w{background:var(--y-bg);color:var(--y-tx);box-shadow:inset 0 0 0 1.5px var(--y)}
+.grp.late>h3{background:var(--r-bg);color:var(--r-tx)}.grp.late>h3 em{background:var(--r);color:#fff}
+.grp.warn>h3{background:var(--y-bg);color:var(--y-tx)}.grp.warn>h3 em{background:var(--y);color:#3d2b00}
+.grp.ok>h3{background:var(--g-bg);color:var(--g-tx)}
+.num.late b{color:var(--r)}
+.day.now b{color:var(--r)}
+
+/* nút bấm nổi */
+.b{background:linear-gradient(#ff8a52,#e8590c);color:#fff;border:0;border-radius:16px;min-height:50px;font-weight:700;letter-spacing:.01em;text-shadow:0 1px 1px rgba(0,0,0,.25);
+  box-shadow:0 6px 0 #a63f08,0 12px 18px -4px rgba(120,40,0,.45),inset 0 1px 0 rgba(255,255,255,.45);transition:transform .08s,box-shadow .08s}
+.b.alt{background:linear-gradient(#5668c8,#34408f);box-shadow:0 6px 0 #1d2660,0 12px 18px -4px rgba(20,28,90,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+.b:active{transform:translateY(5px);box-shadow:0 1px 0 #a63f08,0 3px 6px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.3)}
+.b.alt:active{box-shadow:0 1px 0 #1d2660,0 3px 6px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.25)}
+.ic{width:44px;height:44px;border-radius:14px;color:var(--tx);background:linear-gradient(var(--btn-top),var(--btn-bot));box-shadow:0 4px 0 var(--edge),0 8px 12px -4px rgba(20,33,61,.3),inset 0 1px 0 rgba(255,255,255,.7);transition:transform .08s,box-shadow .08s}
+.ic:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge),inset 0 1px 0 rgba(255,255,255,.4)}
+.ic.del{color:var(--r)}
+.ck,.ck input{width:32px;height:32px}
+.ck input{border-radius:10px;border:2px solid var(--edge);background:linear-gradient(var(--btn-top),var(--btn-bot));box-shadow:0 3px 0 var(--edge),inset 0 1px 0 rgba(255,255,255,.6)}
+.ck input:checked{background:linear-gradient(#3fcf7e,#1f9d55);border-color:#14703c;box-shadow:0 3px 0 #14703c}
+.mk{width:32px;height:32px;box-shadow:0 3px 0 var(--edge)}
+.seg label:nth-child(1) span{--c:var(--g);--cb:var(--g-bg);--ct:var(--g-tx)}
+.seg label:nth-child(2) span{--c:var(--y);--cb:var(--y-bg);--ct:var(--y-tx)}
+.seg label:nth-child(3) span{--c:var(--r);--cb:var(--r-bg);--ct:var(--r-tx)}
+.seg span{border:2px solid var(--c);background:linear-gradient(var(--btn-top),var(--btn-bot));color:var(--tx);border-radius:14px;box-shadow:0 5px 0 var(--c),0 9px 12px -4px rgba(20,33,61,.3);transition:transform .08s,box-shadow .08s;padding:10px 4px}
+.seg input:checked+span,.seg.l input:checked+span{background:var(--cb);color:var(--ct);border-color:var(--c);transform:translateY(4px);box-shadow:0 1px 0 var(--c),inset 0 3px 6px rgba(0,0,0,.18)}
+.d{border-radius:14px;box-shadow:0 3px 0 var(--edge)}
+.d.s{box-shadow:0 1px 0 #0b1233,inset 0 3px 6px rgba(0,0,0,.4);transform:translateY(2px)}
+.nav button{border-radius:16px;background:linear-gradient(var(--btn-top),var(--btn-bot));box-shadow:0 4px 0 var(--edge),0 8px 12px -4px rgba(20,33,61,.3);color:var(--tx)}
+.nav button:active{transform:translateY(3px);box-shadow:0 1px 0 var(--edge)}
+.bar nav{border-radius:26px;box-shadow:0 10px 0 -2px var(--edge),0 18px 30px -8px rgba(12,18,36,.45)}
+.bar button{border-radius:18px;background:linear-gradient(var(--btn-top),var(--btn-bot));color:var(--mut);box-shadow:0 4px 0 var(--edge);margin-bottom:4px;transition:transform .08s,box-shadow .08s}
+.bar button.on{background:linear-gradient(#2c3b80,#17224a);color:#fff;transform:translateY(3px);box-shadow:0 1px 0 #0b1233,inset 0 3px 8px rgba(0,0,0,.45)}
+@media(prefers-reduced-motion:reduce){.b,.ic,.seg span,.bar button{transition:none}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script></head><body>
 <div class="app">
@@ -196,21 +268,21 @@ const RR={'Ngày':'FREQ=DAILY','Tuần':'FREQ=WEEKLY','Tháng':'FREQ=MONTHLY'};
 /* ---- dựng giao diện ---- */
 const dd=(a,b)=>Math.round((new Date(...P(b).map((v,i)=>i===1?v-1:v))-new Date(...P(a).map((v,i)=>i===1?v-1:v)))/864e5);
 const rel=k=>{const n=dd(TODAY(),k);return n===0?'Hôm nay':n===1?'Ngày mai':n===2?'Ngày kia':n<0?'Quá hạn '+(-n)+' ngày':DOW[dowK(k)]+' '+fm(k)};
-const PRN={K:'🚨 Khẩn',Q:'🔔 Quan trọng'};
+const PRN={T:'Thường',Q:'Quan trọng',K:'Khẩn'},TC={T:'g',Q:'q',K:'k'};
 function moonSvg(d){const R=44,ph=((d-1)%29.53)/29.53,a=ph*2*Math.PI,f=(1-Math.cos(a))/2,rx=(Math.abs(Math.cos(a))*R).toFixed(2),sw=f>.5?1:0;
 const lit='M50 '+(50-R)+' A'+R+' '+R+' 0 0 1 50 '+(50+R)+' A'+rx+' '+R+' 0 0 '+sw+' 50 '+(50-R)+'Z';
-return '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#232e63" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/><path d="'+lit+'" fill="#f6e7b4"'+(ph<.5?'':' transform="translate(100 0) scale(-1 1)"')+'/></svg>'}
+return '<svg viewBox="0 0 100 100"><defs><radialGradient id="mg" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#4a5ab0"/><stop offset="1" stop-color="#161f4d"/></radialGradient><radialGradient id="ml" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#fffbe6"/><stop offset="1" stop-color="#e9d38f"/></radialGradient></defs><circle cx="50" cy="50" r="44" fill="url(#mg)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><path d="'+lit+'" fill="url(#ml)"'+(ph<.5?'':' transform="translate(100 0) scale(-1 1)"')+'/></svg>'}
 function taskRow(x,showDate){const t=TODAY(),late=x.due&&x.due<t&&!x.done,tg=[];
 if(!x.due)tg.push('<span class="tag w">Chờ bổ sung thông tin</span>');
 else if(late)tg.push('<span class="tag l">'+rel(x.due)+'</span>');
 else if(showDate)tg.push('<span class="tag">'+rel(x.due)+' · '+fm(x.due,1)+'</span>');
-if(PRN[x.pr])tg.push('<span class="tag '+(x.pr==='K'?'k':'q')+'">'+PRN[x.pr]+' · '+(x.g||'07:30')+'</span>');
+const pr=PRN[x.pr]?x.pr:'T';tg.push('<span class="tag '+TC[pr]+'">'+PRN[pr]+(pr==='T'?'':' · '+(x.g||'07:30'))+'</span>');
 if(x.o)tg.push('<span>PT: '+esc(x.o)+'</span>');
 if(x.rep&&x.rep!=='Không')tg.push('<span>lặp theo '+x.rep.toLowerCase()+'</span>');
-return '<div class="it'+(PRN[x.pr]?' p'+x.pr:'')+(x.done?' dn':'')+'"><label class="ck"><input type="checkbox" aria-label="Đánh dấu xong" '+(x.done?'checked':'')+' onchange="tog('+x.id+')"></label><div class="t"><b>'+esc(x.t)+'</b><div class="m">'+tg.join('')+'</div></div>'+
+return '<div class="it p'+pr+(x.done?' dn':'')+'"><label class="ck"><input type="checkbox" aria-label="Đánh dấu xong" '+(x.done?'checked':'')+' onchange="tog('+x.id+')"></label><div class="t"><b>'+esc(x.t)+'</b><div class="m">'+tg.join('')+'</div></div>'+
 (x.done?'':'<label class="ic" title="'+(x.due?'Đổi hạn chót':'Đặt hạn chót')+'" aria-label="Đổi hạn chót">✎<input type="date" value="'+(x.due||'')+'" onchange="chDue('+x.id+',this.value)"></label>')+
 '<button class="ic del" aria-label="Xóa việc" onclick="delT('+x.id+')">✕</button></div>'}
-function lunRow(e,k){const l=lun(k);return '<div class="it lunar"><span class="mk">☾</span><div class="t"><b>'+esc(e.t)+'</b><div class="m"><span class="tag n">Âm lịch '+l.d+'/'+l.m+'</span>'+(PRN[e.pr||'Q']?'<span class="tag '+((e.pr||'Q')==='K'?'k':'q')+'">'+PRN[e.pr||'Q']+' · '+(e.g||'07:30')+'</span>':'')+'</div></div></div>'}
+function lunRow(e,k){const l=lun(k),pr=PRN[e.pr]?e.pr:'Q';return '<div class="it lunar p'+pr+'"><span class="mk">☾</span><div class="t"><b>'+esc(e.t)+'</b><div class="m"><span class="tag n">Âm lịch '+l.d+'/'+l.m+'</span><span class="tag '+TC[pr]+'">'+PRN[pr]+(pr==='T'?'':' · '+(e.g||'07:30'))+'</span></div></div></div>'}
 const grp=(c,t,items)=>items.length?'<section class="grp '+c+'"><h3><span>'+t+'</span><em>'+items.length+'</em></h3><ul>'+items.map(i=>'<li>'+i+'</li>').join('')+'</ul></section>':'';
 const dayH=(k,n)=>{const l=lun(k);return '<div class="day'+(n===0?' now':'')+'"><b>'+rel(k)+'</b><span>'+fm(k,1)+' · âm lịch '+l.d+'/'+l.m+'</span></div>'};
 function nextUp(){const t=TODAY(),c=[];S.tasks.filter(x=>!x.done&&x.due&&x.due>=t).forEach(x=>c.push([x.due,0,x.t]));S.lunar.filter(e=>!e.p&&e.pr!=='T').forEach(e=>c.push([nextOcc(e),1,e.t]));
@@ -235,7 +307,7 @@ $('#p0').innerHTML=(h.join('')||'')+notes.join('')+(wait.length?'<div class="day
 function renderStats(){const t=TODAY(),o=S.tasks.filter(x=>!x.done&&x.due);let c=0;for(let i=0;i<7;i++)c+=lunOn(add(t,i)).length;
 const lt=o.filter(x=>x.due<t).length,wk=o.filter(x=>x.due>=t&&x.due<=add(t,6)).length;
 $('#stats').innerHTML=[[lt,'Quá hạn',lt?'late':'zero'],[wk,'Việc 7 ngày tới',wk?'':'zero'],[c,'Lễ âm lịch 7 ngày tới',c?'':'zero']].map(a=>'<div class="num '+a[2]+'"><b>'+a[0]+'</b><span>'+a[1]+'</span></div>').join('')}
-const seg=(name,cls,def)=>'<div class="seg '+cls+'" role="radiogroup" aria-label="Mức nhắc">'+[['T','Thường','bản tin sáng'],['Q','🔔 Quan trọng','nhắc mỗi giờ'],['K','🚨 Khẩn','nhắc mỗi 15 phút']].map(o=>'<label><input type="radio" name="'+name+'" value="'+o[0]+'"'+(o[0]===def?' checked':'')+'><span>'+o[1]+'<small>'+o[2]+'</small></span></label>').join('')+'</div>';
+const seg=(name,cls,def)=>'<div class="seg '+cls+'" role="radiogroup" aria-label="Mức nhắc">'+[['T','Thường','bản tin sáng'],['Q','Quan trọng','nhắc mỗi giờ'],['K','Khẩn','nhắc mỗi 15 phút']].map(o=>'<label><input type="radio" name="'+name+'" value="'+o[0]+'"'+(o[0]===def?' checked':'')+'><span>'+o[1]+'<small>'+o[2]+'</small></span></label>').join('')+'</div>';
 const rv=n=>document.querySelector('input[name='+n+']:checked').value;
 function renderTasks(){const all=S.tasks.filter(x=>!x.done),wait=all.filter(x=>!x.due),o=all.filter(x=>x.due).sort((a,b)=>a.due<b.due?-1:1),dn=S.tasks.filter(x=>x.done).slice(-8).reverse();
 $('#p1').innerHTML='<h2>Thêm việc</h2><div class="form"><label class="f">Việc cần làm<input type="text" id="nt" placeholder="Ví dụ: Nộp báo cáo vật tư"></label>'+
@@ -247,7 +319,7 @@ function renderLunar(){const y=view.getFullYear(),m=view.getMonth(),f=new Date(y
 for(let i=0;i<42;i++){const k=K(new Date(y,m,1-off+i)),l=lun(k),o=P(k)[1]-1!==m,ev=lunOn(k).length||S.tasks.some(x=>!x.done&&x.due===k);
 g+='<button class="d'+(o?' o':'')+(k===t?' t':'')+(k===sel?' s':'')+(l.d===1?' m':'')+'" aria-label="'+fm(k,1)+', âm lịch '+l.d+'/'+l.m+'" onclick="pick(\''+k+'\')">'+P(k)[2]+'<i>'+(l.d===1?l.d+'/'+l.m:l.d)+'</i>'+(ev?'<u></u>':'')+'</button>'}
 const sl2=lun(sel),ev=lunOn(sel),tk=S.tasks.filter(x=>!x.done&&x.due===sel);
-const eit=e=>'<div class="it lunar"><span class="mk">☾</span><div class="t"><b>'+esc(e.t)+'</b><div class="m"><span class="tag n">'+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm</span>'+(e.p?'<span class="tag w">Cần xác nhận · chưa được nhắc</span>':'<span>kế tiếp '+fm(nextOcc(e),1)+'</span>')+'<span>báo trước '+e.b+' ngày</span>'+(e.pr&&PRN[e.pr]?'<span class="tag '+(e.pr==='K'?'k':'q')+'">'+PRN[e.pr]+'</span>':'')+'</div></div>'+(e.p?'<button class="b alt" onclick="okL('+e.id+')">Xác nhận</button>':'')+'<button class="ic del" aria-label="Xóa" onclick="delL('+e.id+')">✕</button></div>';
+const eit=e=>{const pr=PRN[e.pr]?e.pr:'Q';return '<div class="it lunar p'+pr+'"><span class="mk">☾</span><div class="t"><b>'+esc(e.t)+'</b><div class="m"><span class="tag n">'+e.d+(e.m?'/'+e.m:' hằng tháng')+' âm</span>'+(e.p?'<span class="tag w">Cần xác nhận · chưa được nhắc</span>':'<span>kế tiếp '+fm(nextOcc(e),1)+'</span>')+'<span>báo trước '+e.b+' ngày</span><span class="tag '+TC[pr]+'">'+PRN[pr]+'</span></div></div>'+(e.p?'<button class="b alt" onclick="okL('+e.id+')">Xác nhận</button>':'')+'<button class="ic del" aria-label="Xóa" onclick="delL('+e.id+')">✕</button></div>'};
 $('#p2').innerHTML='<div class="nav"><button aria-label="Tháng trước" onclick="mv(-1)">‹</button><b>Tháng '+(m+1)+'/'+y+'</b><button aria-label="Tháng sau" onclick="mv(1)">›</button></div><div class="cal">'+g+'</div>'+
 '<section class="grp lun pick"><h3><span>'+fm(sel,1)+' = '+sl2.d+'/'+sl2.m+(sl2.leap?' nhuận':'')+' âm lịch, năm '+cc(sl2.y)+'</span></h3>'+(ev.length||tk.length?'<ul>'+ev.map(e=>'<li>'+esc(e.t)+'</li>').join('')+tk.map(x=>'<li>'+esc(x.t)+' <span class="mu">(việc)</span></li>').join('')+'</ul>':'<ul><li class="mu">Không có việc.</li></ul>')+'</section>'+
 '<h2>Thêm ngày âm lịch</h2><div class="form"><label class="f">Tên<input type="text" id="lt" placeholder="Ví dụ: Giỗ ông nội"></label><div class="two"><label class="f">Ngày âm<input type="number" id="ld" min="1" max="30" inputmode="numeric"></label><label class="f">Tháng âm (0 = mọi tháng)<input type="number" id="lm" min="0" max="12" inputmode="numeric" value="0"></label></div>'+
