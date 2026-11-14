@@ -195,6 +195,12 @@ input[type=text],input[type=number],input[type=date],input[type=time],input[type
 .bar button{border-radius:18px;background:linear-gradient(var(--btn-top),var(--btn-bot));color:var(--mut);box-shadow:0 4px 0 var(--edge);margin-bottom:4px;transition:transform .08s,box-shadow .08s}
 .bar button.on{background:linear-gradient(#2c3b80,#17224a);color:#fff;transform:translateY(3px);box-shadow:0 1px 0 #0b1233,inset 0 3px 8px rgba(0,0,0,.45)}
 @media(prefers-reduced-motion:reduce){.b,.ic,.seg span,.bar button{transition:none}}
+#cf{display:none;position:fixed;inset:0;z-index:30;background:rgba(10,16,40,.58);align-items:center;justify-content:center;padding:20px}
+#cf.on{display:flex}
+#cf .box{width:100%;max-width:380px;background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:20px;display:grid;gap:16px;box-shadow:0 8px 0 rgba(0,0,0,.28),0 26px 40px -10px rgba(0,0,0,.55)}
+#cf p{margin:0;white-space:pre-line;line-height:1.5;font-size:15.5px}
+#cf .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#cf .b.no{background:var(--soft);color:inherit;border:1px solid var(--bd)}
 #toast{position:fixed;left:50%;width:max-content;bottom:calc(104px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:20;max-width:92vw;padding:13px 20px;border-radius:16px;background:#14213d;color:#fff;font-weight:600;box-shadow:0 5px 0 #070b18,0 14px 24px -6px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;text-align:center}
 #toast.on{opacity:1;transform:translate(-50%,0)}#toast.bad{background:#b02525;box-shadow:0 5px 0 #6e1313,0 14px 24px -6px rgba(0,0,0,.5)}
 .it.flash{animation:fl 1.6s ease-out}@keyframes fl{0%{box-shadow:0 0 0 4px var(--sig),0 4px 0 var(--edge)}100%{box-shadow:0 4px 0 var(--edge),var(--lift)}}
@@ -222,6 +228,7 @@ input[type=text],input[type=number],input[type=date],input[type=time],input[type
   <button data-t="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>Âm lịch</button>
 </nav></div>
 <div id="toast" role="status" aria-live="polite"></div>
+<div id="cf" role="dialog" aria-modal="true"><div class="box"><p id="cfm"></p><div class="row"><button class="b no" id="cfn">Hủy</button><button class="b" id="cfy">Xác nhận</button></div></div></div>
 <div id="lg"><div class="box"><h1>Sổ nhắc việc</h1><input type="text" id="lgE" placeholder="Email" autocomplete="username"><input type="password" id="lgP" placeholder="Mật khẩu" autocomplete="current-password"><button class="b" onclick="login()">Đăng nhập</button><div id="lerr" class="mu" style="color:var(--late)"></div></div></div>
 <script>
 const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0'),P=k=>k.split('-').map(Number);
@@ -270,6 +277,7 @@ function gcal(title,k,rrule){const c=s=>s.replace(/-/g,''),u='https://calendar.g
 return '<a href="'+u+'" target="_blank" rel="noopener">+ Lịch</a>'}
 const RR={'Ngày':'FREQ=DAILY','Tuần':'FREQ=WEEKLY','Tháng':'FREQ=MONTHLY'};
 /* ---- dựng giao diện ---- */
+function ask(m){return new Promise(r=>{const e=$('#cf');$('#cfm').textContent=m;e.className='on';const d=v=>{e.className='';$('#cfy').onclick=$('#cfn').onclick=null;r(v)};$('#cfy').onclick=()=>d(true);$('#cfn').onclick=()=>d(false)})}
 let tt;function toast(m,bad){const e=$('#toast');e.textContent=m;e.className='on'+(bad?' bad':'');clearTimeout(tt);tt=setTimeout(()=>{e.className=''},3200)}
 function showRow(id){setTimeout(()=>{const e=document.getElementById('r'+id);if(e){e.scrollIntoView({behavior:'smooth',block:'center'});e.classList.add('flash')}},60)}
 
@@ -330,7 +338,7 @@ const eit=e=>{const pr=PRN[e.pr]?e.pr:'Q';return '<div class="it lunar p'+pr+'">
 $('#p2').innerHTML='<div class="nav"><button aria-label="Tháng trước" onclick="mv(-1)">‹</button><b>Tháng '+(m+1)+'/'+y+'</b><button aria-label="Tháng sau" onclick="mv(1)">›</button></div><div class="cal">'+g+'</div>'+
 '<section class="grp lun pick"><h3><span>'+fm(sel,1)+' = '+sl2.d+'/'+sl2.m+(sl2.leap?' nhuận':'')+' âm lịch, năm '+cc(sl2.y)+'</span></h3>'+(ev.length||tk.length?'<ul>'+ev.map(e=>'<li>'+esc(e.t)+'</li>').join('')+tk.map(x=>'<li>'+esc(x.t)+' <span class="mu">(việc)</span></li>').join('')+'</ul>':'<ul><li class="mu">Không có việc.</li></ul>')+'</section>'+
 '<h2>Thêm ngày âm lịch</h2><div class="form"><label class="f">Tên<input type="text" id="lt" placeholder="Ví dụ: Giỗ ông nội"></label><div class="two"><label class="f">Ngày âm<input type="number" id="ld" min="1" max="30" inputmode="numeric"></label><label class="f">Tháng âm (0 = mọi tháng)<input type="number" id="lm" min="0" max="12" inputmode="numeric" value="0"></label></div>'+
-'<div class="two"><label class="f">Báo trước<select id="lb"><option value="0">Đúng ngày</option><option value="1" selected>Trước 1 ngày</option><option value="2">Trước 2 ngày</option></select></label><label class="f">Giờ nhắc<input type="time" id="lg" value="07:30"></label></div>'+seg('lpv','l',"Q")+
+'<div class="two"><label class="f">Báo trước<select id="lb"><option value="0">Đúng ngày</option><option value="1" selected>Trước 1 ngày</option><option value="2">Trước 2 ngày</option></select></label><label class="f">Giờ nhắc<input type="time" id="lhg" value="07:30"></label></div>'+seg('lpv','l',"Q")+
 '<button class="b alt" onclick="addL()">Thêm ngày âm lịch</button><div class="mu" style="margin:0">Tự lặp lại mỗi năm theo âm lịch.</div></div>'+
 '<h2>Danh sách ('+S.lunar.length+')</h2>'+S.lunar.slice().sort((a,b)=>(a.m||0)-(b.m||0)||a.d-b.d).map(eit).join('')}
 function render(){const t=TODAY(),l=lun(t);$('#hd').textContent=DOW[dowK(t)];$('#hd2').textContent=fm(t,1);$('#hl').innerHTML='Âm lịch <b>'+l.d+'/'+l.m+(l.leap?' nhuận':'')+'</b> · năm '+cc(l.y);$('#moon').innerHTML=moonSvg(l.d);$('#next').innerHTML=nextUp();renderStats();renderToday();renderTasks();renderLunar()}
@@ -340,13 +348,13 @@ function addT(){const t=$('#nt').value.trim(),d=$('#nd').value;if(!t){toast('Nh�
 const x={id:nid(),t,due:d||'',o:$('#no').value.trim(),rep:$('#nr').value,pr:rv('npv'),g:$('#ng').value||'07:30',done:false};S.tasks.push(x);save();render();setTab(1);
 toast('Đã thêm: '+t+(d?' · hạn '+fm(d,1):' · chờ bổ sung hạn chót')+(d?'. Lịch Google cập nhật trong 15 phút':''));showRow(x.id)}
 function tog(id){const x=S.tasks.find(a=>a.id===id);x.done=!x.done;if(x.done&&x.due&&x.rep&&x.rep!=='Không'){let n=x.due;do{const[a,b,c]=P(n);n=x.rep==='Ngày'?add(n,1):x.rep==='Tuần'?add(n,7):K(new Date(a,b,Math.min(c,new Date(a,b+1,0).getDate())))}while(n<TODAY());S.tasks.push({id:nid(),t:x.t,due:n,o:x.o||'',rep:x.rep,pr:x.pr||'T',g:x.g||'07:30',done:false})}save();render();toast(x.done?'Đã đánh dấu xong: '+x.t:'Đã bỏ đánh dấu xong')}
-function chDue(id,d){const x=S.tasks.find(a=>a.id===id);if(!d||d===x.due){render();return}
+async function chDue(id,d){const x=S.tasks.find(a=>a.id===id);if(!d||d===x.due){render();return}
 const msg=x.due?'Hành động: đổi hạn chót việc "'+x.t+'"\nDữ liệu đổi: '+fm(x.due,1)+' → '+fm(d,1)+'\nẢnh hưởng: nhắc việc, chuông và Google Calendar sẽ theo ngày mới. Xác nhận?':'Hành động: đặt hạn chót '+fm(d,1)+' cho việc "'+x.t+'". Xác nhận?';
-if(!confirm(msg)){render();return}x.due=d;save();render();toast('Đã đổi hạn: '+x.t+' → '+fm(d,1));showRow(x.id)}
-function delT(id){const x=S.tasks.find(a=>a.id===id);if(!confirm('Hành động: xóa việc "'+x.t+'". Việc sẽ mất khỏi danh sách và lịch nhắc, không hoàn tác. Xác nhận xóa?'))return;S.tasks=S.tasks.filter(a=>a.id!==id);save();render();toast('Đã xóa: '+x.t)}
-function addL(){const t=$('#lt').value.trim(),d=+$('#ld').value,m=+$('#lm').value||0;if(!t){toast('Nhập tên ngày âm lịch trước',1);$('#lt').focus();return}if(d<1||d>30||m<0||m>12){toast('Ngày âm phải từ 1 đến 30, tháng từ 0 đến 12',1);return}if(!confirm('Thêm việc âm lịch "'+t+'" vào ngày '+d+(m?'/'+m:' hằng tháng')+' âm lịch, nhắc trước '+$('#lb').value+' ngày.'+(d===30?' Lưu ý: tháng thiếu không có ngày 30, hệ thống sẽ nhắc vào ngày 29.':'')+' Xác nhận lưu?'))return;S.lunar.push({id:nid(),t,d,m,b:+$('#lb').value,pr:rv('lpv'),g:$('#lg').value||'07:30'});save();render();setTab(2);toast('Đã thêm ngày âm lịch: '+t)}
-function okL(id){const x=S.lunar.find(a=>a.id===id);if(!confirm('Xác nhận "'+x.t+'" ('+x.d+(x.m?'/'+x.m:' hằng tháng')+' âm lịch) là ngày chính thức, bắt đầu được nhắc trước '+x.b+' ngày?'))return;delete x.p;save();render()}
-function delL(id){const x=S.lunar.find(a=>a.id===id);if(!confirm('Hành động: xóa ngày "'+x.t+'" khỏi lịch âm. Lịch nhắc của ngày này sẽ mất. Xác nhận xóa?'))return;S.lunar=S.lunar.filter(a=>a.id!==id);save();render()}
+if(!await ask(msg)){render();return}x.due=d;save();render();toast('Đã đổi hạn: '+x.t+' → '+fm(d,1));showRow(x.id)}
+async function delT(id){const x=S.tasks.find(a=>a.id===id);if(!await ask('Hành động: xóa việc "'+x.t+'". Việc sẽ mất khỏi danh sách và lịch nhắc, không hoàn tác. Xác nhận xóa?'))return;S.tasks=S.tasks.filter(a=>a.id!==id);save();render();toast('Đã xóa: '+x.t)}
+async function addL(){const t=$('#lt').value.trim(),d=+$('#ld').value,m=+$('#lm').value||0;if(!t){toast('Nhập tên ngày âm lịch trước',1);$('#lt').focus();return}if(d<1||d>30||m<0||m>12){toast('Ngày âm phải từ 1 đến 30, tháng từ 0 đến 12',1);return}if(!await ask('Thêm việc âm lịch "'+t+'" vào ngày '+d+(m?'/'+m:' hằng tháng')+' âm lịch, nhắc trước '+$('#lb').value+' ngày.'+(d===30?' Lưu ý: tháng thiếu không có ngày 30, hệ thống sẽ nhắc vào ngày 29.':'')+' Xác nhận lưu?'))return;S.lunar.push({id:nid(),t,d,m,b:+$('#lb').value,pr:rv('lpv'),g:$('#lhg').value||'07:30'});save();render();setTab(2);toast('Đã thêm ngày âm lịch: '+t)}
+async function okL(id){const x=S.lunar.find(a=>a.id===id);if(!await ask('Xác nhận "'+x.t+'" ('+x.d+(x.m?'/'+x.m:' hằng tháng')+' âm lịch) là ngày chính thức, bắt đầu được nhắc trước '+x.b+' ngày?'))return;delete x.p;save();render()}
+async function delL(id){const x=S.lunar.find(a=>a.id===id);if(!await ask('Hành động: xóa ngày "'+x.t+'" khỏi lịch âm. Lịch nhắc của ngày này sẽ mất. Xác nhận xóa?'))return;S.lunar=S.lunar.filter(a=>a.id!==id);save();render()}
 function pick(k){sel=k;renderLunar()}
 function mv(n){view=new Date(view.getFullYear(),view.getMonth()+n,1);renderLunar()}
 function setTab(n){tab=n;document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',+x.dataset.t===n));[0,1,2].forEach(i=>$('#p'+i).hidden=i!==n);window.scrollTo({top:0})}
